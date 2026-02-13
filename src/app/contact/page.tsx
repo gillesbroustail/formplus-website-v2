@@ -4,12 +4,17 @@ import { ContactForm } from '@/components/ContactForm';
 export const metadata = {
   title: 'Contact'
 };
-export default function MembershipsPage() {
+
+export default function ContactPage() {
   return (
     <main style={{ padding: "72px 0" }}>
       <div className="container">
-        <h1 className="h2">Adhésions</h1>
-        <p className="lead">On peut structurer tes offres premium ici.</p>
+        <SectionHeader
+          title="Contact"
+          subtitle="Notre équipe est à votre disposition pour toute demande."
+        />
+
+        <ContactForm />
       </div>
     </main>
   );
