@@ -35,4 +35,15 @@ export default function ContactPage() {
       </div>
     </div>
   );
+}export default function ContactPage() {
+  return (
+    <main style={{ padding: "72px 0" }}>
+      <div className="container">
+        <h1 className="h2">Contact</h1>
+        <p className="lead">
+          Dis-moi ce que tu veux ici (formulaire, WhatsApp, téléphone, email).
+        </p>
+      </div>
+    </main>
+  );
 }

@@ -218,22 +218,4 @@ export default function HomePage() {
       </footer>
     </main>
   );
-}export default function ContactPage() {
-  return (
-    <main style={{ padding: "72px 0" }}>
-      <div className="container">
-        <h1 className="h2">Contact</h1>
-        <p className="lead">Dis-moi ce que tu veux ici (formulaire, WhatsApp, téléphone, email).</p>
-      </div>
-    </main>
-  );
-}export default function MembershipsPage() {
-  return (
-    <main style={{ padding: "72px 0" }}>
-      <div className="container">
-        <h1 className="h2">Adhésions</h1>
-        <p className="lead">On peut structurer 3 offres premium (ou moins) avec bénéfices clairs.</p>
-      </div>
-    </main>
-  );
 }
