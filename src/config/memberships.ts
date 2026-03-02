@@ -13,22 +13,22 @@ export type MembershipPlan = {
 export const membershipSections = [
   {
     id: 'sur-mesure',
-    title: 'Sur mesure',
+    title: 'Packs sur mesure',
     subtitle: "Parce qu’un seul abonnement ne convient pas à tout un chacun, choisissez celui qui vous convient le mieux."
   },
   {
     id: 'sans-engagement',
-    title: 'Sans engagement',
+    title: 'Liberté',
     subtitle: "Pour découvrir FORM+ ou garder votre liberté, 4 solutions sans engagement."
   },
   {
     id: 'cours-collectifs',
-    title: 'Cours collectifs',
+    title: 'Studio & cours',
     subtitle: "Des expériences de fitness fun, motivantes et efficaces."
   },
   {
     id: 'muscu-cardio',
-    title: 'Muscu cardio',
+    title: 'Musculation & cardio',
     subtitle: "Deux formules pour la muscu et le cardio, selon votre engagement."
   },
   {
@@ -67,7 +67,7 @@ export const membershipPlans: MembershipPlan[] = [
     commitment: '1 prélèvement min.',
     description: 'Séances illimitées, accès aux 2 clubs.',
     highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours'],
-    tag: 'Sans engagement',
+    tag: 'Liberté',
     category: 'sans-engagement'
   },
   {
