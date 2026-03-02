@@ -35,7 +35,7 @@ export async function getGoogleRating(): Promise<GoogleRating> {
         'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask': 'rating,userRatingCount'
       },
-      next: { revalidate: 60 * 60 * 6 }
+      next: { revalidate: 60 * 60 * 24 }
     });
 
     if (!response.ok) {
