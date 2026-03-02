@@ -24,7 +24,6 @@ export function Header() {
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <a href={siteConfig.plusZen} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-[0.3em] text-muted hover:text-text">+ZEN</a>
-          <Button href="/planning" variant="secondary">Planning</Button>
           <Button href="/abonnements">S'inscrire</Button>
         </div>
         <button
@@ -61,7 +60,6 @@ export function Header() {
             >
               +ZEN
             </a>
-            <Button href="/planning" variant="secondary" className="w-full">Planning</Button>
             <Button href="/abonnements" className="w-full">S'inscrire</Button>
           </div>
         </div>
