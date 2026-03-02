@@ -20,7 +20,7 @@ export default function HomePage() {
           className="object-cover opacity-70"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/30" />
         <div className="relative container-wide flex min-h-[90vh] flex-col justify-center py-20">
           <p className="text-xs uppercase tracking-[0.4em] text-muted">Fitness premium · Nouméa</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-display font-semibold tracking-tightest md:text-6xl">
@@ -171,14 +171,14 @@ export default function HomePage() {
       </section>
 
       <section className="section-pad">
-        <div className="container-wide rounded-3xl border border-border bg-gradient-to-r from-primary to-[#ff8a3d] p-10 text-bg">
+        <div className="container-wide rounded-3xl border border-border bg-[#101010] p-10 text-text">
           <h2 className="text-3xl font-display font-semibold">Prêt à rejoindre FORM+ ?</h2>
-          <p className="mt-3 max-w-2xl text-sm text-bg/80">
+          <p className="mt-3 max-w-2xl text-sm text-muted">
             Réservez un essai, découvrez nos clubs et choisissez votre formule idéale.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Button href="/abonnements" className="bg-bg text-text">S'inscrire</Button>
-            <Button href="/contact" variant="secondary" className="border-bg text-bg">Essai</Button>
+            <Button href="/abonnements" className="!bg-text !text-bg !border-text">S'inscrire</Button>
+            <Button href="/contact" variant="secondary" className="!border-text/40 !text-text">Essai</Button>
           </div>
         </div>
       </section>
