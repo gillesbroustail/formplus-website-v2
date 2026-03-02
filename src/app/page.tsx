@@ -7,10 +7,13 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 import { getContent } from '@/content';
 import { siteConfig } from '@/config/site';
+import { getGoogleRating } from '@/lib/googleRating';
 
 const content = getContent('fr');
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googleRating = await getGoogleRating();
+
   return (
     <div>
       <section className="relative min-h-[90vh] overflow-hidden">
@@ -155,8 +158,11 @@ export default function HomePage() {
                 <span className="text-lg font-semibold">50+</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-muted">Note Google</span>
-                <span className="text-lg font-semibold">4,8 / 5</span>
+                <span className="text-muted">
+                  Note Google
+                  {googleRating.reviewCountText ? ` · ${googleRating.reviewCountText}` : ''}
+                </span>
+                <span className="text-lg font-semibold">{googleRating.ratingText}</span>
               </div>
             </div>
           </div>
