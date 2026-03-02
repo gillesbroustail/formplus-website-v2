@@ -22,11 +22,21 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
     const email = String(formData.get('email') || '').trim();
     const phone = String(formData.get('phone') || '').trim();
     const notes = String(formData.get('notes') || '').trim();
+    const interest = String(formData.get('interest') || 'formplus').trim();
+    const shareWithZen = formData.get('shareWithZen') === 'on';
+
+    if ((interest === 'pluszen' || interest === 'both') && !shareWithZen) {
+      setStatus('error');
+      setErrorMessage('Veuillez autoriser le partage avec +ZEN pour cette selection.');
+      return;
+    }
 
     const messageLines = [
       'Demande d\'inscription depuis le parcours abonnements.',
       `Offre: ${planName}`,
       `Club choisi: ${clubName}`,
+      `Interet: ${interest}`,
+      `Partage +ZEN: ${shareWithZen ? 'oui' : 'non'}`,
       notes ? `Message client: ${notes}` : 'Message client: (aucun)'
     ];
 
@@ -43,7 +53,10 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
           name,
           email,
           phone,
-          message: messageLines.join('\n')
+          message: messageLines.join('\n'),
+          interest,
+          shareWithZen,
+          source: 'signup_flow'
         })
       });
 
@@ -117,6 +130,24 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
             className="rounded-md border border-border bg-bg px-4 py-3 text-sm text-text outline-none transition focus:border-primary"
             placeholder="vous@email.com"
           />
+        </label>
+
+        <label className="grid gap-2 text-sm text-muted">
+          Je m'interesse a
+          <select
+            name="interest"
+            defaultValue="formplus"
+            className="rounded-md border border-border bg-bg px-4 py-3 text-sm text-text outline-none transition focus:border-primary"
+          >
+            <option value="formplus">FORM+ uniquement</option>
+            <option value="pluszen">+ZEN uniquement</option>
+            <option value="both">FORM+ et +ZEN</option>
+          </select>
+        </label>
+
+        <label className="flex items-start gap-3 rounded-md border border-border bg-bg px-4 py-3 text-sm text-muted">
+          <input name="shareWithZen" type="checkbox" className="mt-1 h-4 w-4 accent-white" />
+          <span>J'accepte que mes coordonnees soient partagees avec +ZEN si je selectionne +ZEN.</span>
         </label>
 
         <label className="grid gap-2 text-sm text-muted">

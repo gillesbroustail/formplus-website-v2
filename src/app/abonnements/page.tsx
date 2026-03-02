@@ -2,6 +2,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { membershipSections } from '@/config/memberships';
 import { Button } from '@/components/Button';
+import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 
 export const metadata = {
   title: 'Abonnements'
@@ -32,6 +33,8 @@ export default function AbonnementsPage() {
       <div className="mt-12">
         <MembershipComparison />
       </div>
+
+      <ZenEcosystemSection compact />
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         <div className="rounded-3xl border border-border bg-surface p-6">

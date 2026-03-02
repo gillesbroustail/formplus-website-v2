@@ -5,6 +5,7 @@ import { PlanningModuleMock } from '@/components/planning/PlanningModuleMock';
 import { PlanningHowItWorks } from '@/components/planning/PlanningHowItWorks';
 import { PlanningAppPromo } from '@/components/planning/PlanningAppPromo';
 import { PlanningFinalCta } from '@/components/planning/PlanningFinalCta';
+import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 
 export const metadata: Metadata = {
   title: 'Planning FORM+ | Cours fitness premium à Nouméa',
@@ -20,6 +21,7 @@ export default function PlanningPage() {
       <PlanningModuleMock />
       <PlanningHowItWorks />
       <PlanningAppPromo />
+      <ZenEcosystemSection compact />
       <PlanningFinalCta />
     </div>
   );

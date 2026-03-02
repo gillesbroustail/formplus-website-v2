@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { ClubFinder } from '@/components/ClubFinder';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 import { getContent } from '@/content';
 import { siteConfig } from '@/config/site';
 
@@ -66,6 +67,8 @@ export default function HomePage() {
           <ClubFinder />
         </div>
       </section>
+
+      <ZenEcosystemSection />
 
       <section className="section-pad">
         <div className="container-wide">
