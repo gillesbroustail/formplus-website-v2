@@ -20,12 +20,13 @@ export function PlanningHero() {
                 className="h-6 w-auto opacity-90 md:h-8"
                 priority
               />
-              <span className="text-text/40">•</span>
+              <span className="text-text/40">/</span>
+              <span className="inline-flex items-center gap-2">+ qu&apos;un</span>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-text/30 bg-surface align-middle md:h-8 md:w-8">
                   <Clock3 className="h-4 w-4" aria-hidden="true" />
                 </span>
-                <span>qu&apos;un horaire, une expérience.</span>
+                <span>, une Xpèrience.</span>
               </span>
             </span>
           </span>
