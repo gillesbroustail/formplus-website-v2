@@ -65,6 +65,28 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad pt-0">
+        <div className="container-wide grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+          <div className="relative min-h-[420px] overflow-hidden rounded-3xl border border-border">
+            <Image src="/assets/brand/club-vata.jpg" alt="Studio FORM+ Vata" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ Vata</p>
+          </div>
+          <div className="grid gap-4">
+            <div className="relative min-h-[205px] overflow-hidden rounded-3xl border border-border">
+              <Image src="/assets/brand/club-almatrium.jpg" alt="Studio FORM+ Almatrium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ Almatrium</p>
+            </div>
+            <div className="relative min-h-[205px] overflow-hidden rounded-3xl border border-border">
+              <Image src="/assets/brand/app.jpg" alt="Application FORM+" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">App & booking</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad bg-surface">
         <div className="container-wide">
           <ClubFinder />

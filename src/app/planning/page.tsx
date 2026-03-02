@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { PlanningHero } from '@/components/planning/PlanningHero';
 import { PlanningValueProps } from '@/components/planning/PlanningValueProps';
 import { PlanningHowItWorks } from '@/components/planning/PlanningHowItWorks';
@@ -19,6 +20,28 @@ export default function PlanningPage() {
     <div className="container-wide section-pad">
       <PlanningHero />
       <PlanningValueProps />
+
+      <section className="section-pad pt-0">
+        <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="relative min-h-[390px] overflow-hidden rounded-3xl border border-border">
+            <Image src="/assets/brand/hero.jpg" alt="Rythme d'entrainement FORM+" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/90">Rythme premium</p>
+          </div>
+          <div className="grid gap-4">
+            <div className="relative min-h-[187px] overflow-hidden rounded-3xl border border-border">
+              <Image src="/assets/brand/club-vata.jpg" alt="Cours collectifs Vata" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">Studio + cours</p>
+            </div>
+            <div className="relative min-h-[187px] overflow-hidden rounded-3xl border border-border">
+              <Image src="/assets/brand/club-almatrium.jpg" alt="Coaching Almatrium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">Coaching expert</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section-pad pt-2" id="planning-realtime" aria-label="Planning en temps réel Deciplus">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">

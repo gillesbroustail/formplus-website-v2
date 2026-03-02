@@ -1,4 +1,5 @@
 import { SectionHeader } from '@/components/SectionHeader';
+import Image from 'next/image';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { Button } from '@/components/Button';
 import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
@@ -24,6 +25,21 @@ export default function AbonnementsPage() {
       <div className="mt-12">
         <MembershipComparison />
       </div>
+
+      <section className="mt-14">
+        <div className="grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-border">
+            <Image src="/assets/brand/club-vata.jpg" alt="Abonnements FORM+ premium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/15 to-transparent" />
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">Offres premium</p>
+          </div>
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-border">
+            <Image src="/assets/brand/club-almatrium.jpg" alt="Communauté FORM+ et Studio +ZEN" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/15 to-transparent" />
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ x Studio +ZEN</p>
+          </div>
+        </div>
+      </section>
 
       <StudioZenPricingSection />
 
