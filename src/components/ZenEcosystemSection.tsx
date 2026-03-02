@@ -25,7 +25,7 @@ export function ZenEcosystemSection({ compact = false }: ZenEcosystemSectionProp
             <p className="mt-2 text-sm text-muted">Musculation, cardio, coaching, cours collectifs et acces multi-clubs.</p>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-5">
-            <p className="text-xs uppercase tracking-[0.28em] text-muted">+ZEN Studio</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-muted">Studio +ZEN</p>
             <p className="mt-2 text-sm text-muted">Reformer Pilates, Fly Yoga, Yoga et Pilates dans un cadre studio premium.</p>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-5">
@@ -41,7 +41,7 @@ export function ZenEcosystemSection({ compact = false }: ZenEcosystemSectionProp
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-text transition hover:border-primary"
           >
-            Voir +ZEN Studio
+            Voir Studio +ZEN
           </a>
           <Button href="/contact?interest=pluszen" variant="secondary">Je m'interesse a +ZEN</Button>
         </div>

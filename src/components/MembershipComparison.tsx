@@ -38,16 +38,16 @@ export function MembershipComparison() {
           <p className="mt-2 text-sm text-muted">{activeSection.subtitle}</p>
         </article>
         <article className="rounded-2xl border border-border bg-surface p-4">
-          <p className="text-xs uppercase tracking-[0.28em] text-muted">+ZEN Studio</p>
+          <p className="text-xs uppercase tracking-[0.28em] text-muted">Studio +ZEN</p>
           <p className="mt-2 text-sm text-muted">
             Studio situé dans FORM+ Vata: Reformer Pilates, Fly Yoga, Yoga et Pilates.
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-xs">
             <a href="https://www.pluszen.nc/#1" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">
-              Voir +ZEN Studio
+              Voir Studio +ZEN
             </a>
             <Link href="/contact?interest=pluszen" className="text-muted hover:text-text">
-              Demander +ZEN Studio
+              Demander Studio +ZEN
             </Link>
           </div>
         </article>
