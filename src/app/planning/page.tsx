@@ -1,19 +1,26 @@
-import { SectionHeader } from '@/components/SectionHeader';
-import { TimetableFilters } from '@/components/TimetableFilters';
+import { Metadata } from 'next';
+import { PlanningHero } from '@/components/planning/PlanningHero';
+import { PlanningValueProps } from '@/components/planning/PlanningValueProps';
+import { PlanningModuleMock } from '@/components/planning/PlanningModuleMock';
+import { PlanningHowItWorks } from '@/components/planning/PlanningHowItWorks';
+import { PlanningAppPromo } from '@/components/planning/PlanningAppPromo';
+import { PlanningFinalCta } from '@/components/planning/PlanningFinalCta';
 
-export const metadata = {
-  title: 'Planning'
+export const metadata: Metadata = {
+  title: 'Planning FORM+ | Cours fitness premium à Nouméa',
+  description:
+    'Consultez le planning fitness FORM+ à Nouméa : cours collectifs, RPM, yoga, renforcement et réservation via l’application.'
 };
 
 export default function PlanningPage() {
   return (
     <div className="container-wide section-pad">
-      <SectionHeader
-        eyebrow="Planning"
-        title="Organisez vos séances en un clin d’œil"
-        subtitle="Planning officiel FORM+ (Espace membre). Filtrez par club, jour, cours ou coach."
-      />
-      <TimetableFilters />
+      <PlanningHero />
+      <PlanningValueProps />
+      <PlanningModuleMock />
+      <PlanningHowItWorks />
+      <PlanningAppPromo />
+      <PlanningFinalCta />
     </div>
   );
 }
