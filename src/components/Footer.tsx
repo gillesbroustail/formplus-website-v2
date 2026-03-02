@@ -9,9 +9,9 @@ export function Footer() {
           <p className="text-xl font-display font-semibold">FORM+</p>
           <p className="mt-3 text-muted max-w-sm">Le fitness premium en Nouvelle-Calédonie. Clubs, coaching et expériences +ZEN.</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
-            <Link href={siteConfig.socials.instagram} className="text-muted hover:text-text">Instagram</Link>
-            <Link href={siteConfig.socials.facebook} className="text-muted hover:text-text">Facebook</Link>
-            <Link href={siteConfig.socials.twitter} className="text-muted hover:text-text">Twitter</Link>
+            <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Instagram</a>
+            <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Facebook</a>
+            <a href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Twitter</a>
             <a href={`mailto:${siteConfig.socials.email}`} className="text-muted hover:text-text">Email</a>
           </div>
         </div>
@@ -45,7 +45,7 @@ export function Footer() {
                 className="w-full rounded-full border border-border bg-bg px-4 py-2 text-xs"
                 aria-label="Email newsletter"
               />
-              <button className="rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.3em] text-bg">OK</button>
+              <button type="button" className="rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.3em] text-bg">OK</button>
             </div>
           </div>
         </div>

@@ -40,8 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${montserrat.variable} ${oxygen.variable}`}>
       <body className="bg-bg text-text">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-bg">
+          Aller au contenu
+        </a>
         <Header />
-        <main className="pb-24 md:pb-0">{children}</main>
+        <main id="main-content" className="pb-24 md:pb-0">{children}</main>
         <Footer />
         <MobileCta />
       </body>

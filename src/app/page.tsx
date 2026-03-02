@@ -1,221 +1,187 @@
-"use client";
+import Image from 'next/image';
+import { Button } from '@/components/Button';
+import { SectionHeader } from '@/components/SectionHeader';
+import { ClubFinder } from '@/components/ClubFinder';
+import { MembershipComparison } from '@/components/MembershipComparison';
+import { FaqAccordion } from '@/components/FaqAccordion';
+import { getContent } from '@/content';
+import { siteConfig } from '@/config/site';
 
-import React from "react";
+const content = getContent('fr');
 
 export default function HomePage() {
-  const scrollToId = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
-    <main>
-      {/* HERO */}
-      <header className="hero">
-        <nav className="nav">
-          <div className="brand">FORM+</div>
-          <div className="navLinks">
-            <button className="navBtn" onClick={() => scrollToId("espaces")}>
-              Espaces
-            </button>
-            <button className="navBtn" onClick={() => scrollToId("experience")}>
-              Expérience
-            </button>
-            <button className="navBtn" onClick={() => scrollToId("membre")}>
-              Devenir membre
-            </button>
-          </div>
-        </nav>
-
-        <div className="heroInner">
-          <p className="eyebrow">FORM+</p>
-          <h1 className="heroTitle">
-            L’excellence du fitness en Nouvelle-Calédonie
+    <div>
+      <section className="relative min-h-[90vh] overflow-hidden">
+        <Image
+          src="/assets/placeholders/hero.svg"
+          alt="FORM+ performance"
+          fill
+          className="object-cover opacity-70"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-transparent" />
+        <div className="relative container-wide flex min-h-[90vh] flex-col justify-center py-20">
+          <p className="text-xs uppercase tracking-[0.4em] text-muted">Fitness premium · Nouméa</p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-display font-semibold tracking-tightest md:text-6xl">
+            {content.hero.title}
           </h1>
-          <p className="heroSubtitle">
-            Un environnement pensé pour celles et ceux qui recherchent performance,
-            précision et exigence.
-          </p>
-
-          <div className="heroCtas">
-            <button className="btnPrimary" onClick={() => scrollToId("espaces")}>
-              Découvrir nos espaces
-            </button>
-            <button className="btnSecondary" onClick={() => scrollToId("membre")}>
-              Devenir membre
-            </button>
+          <p className="mt-4 max-w-2xl text-lg text-muted">{content.hero.subtitle}</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Button href="/abonnements">{content.hero.primaryCta}</Button>
+            <Button href="/abonnements" variant="secondary">{content.hero.secondaryCta}</Button>
+            <Button href="/contact" variant="ghost">Essai</Button>
           </div>
-
-          <div className="heroMeta">
-            <div className="pill">Premium</div>
-            <div className="pill">Performance</div>
-            <div className="pill">Expérience</div>
+          <div className="mt-12 flex flex-wrap gap-8 text-sm text-muted">
+            {siteConfig.stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-xl font-semibold text-text">{stat.value}</p>
+                <p>{stat.label}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </header>
-
-      {/* SECTION: POSITIONNEMENT */}
-      <section className="section">
-        <div className="container">
-          <h2 className="h2">Plus qu’un club. Une expérience.</h2>
-          <p className="lead">
-            FORM+ est une signature. Un lieu où l’entraînement devient structuré,
-            mesuré, maîtrisé.
-          </p>
-          <p className="text">
-            Chaque détail — lumière, circulation, matériel, programmation — est conçu
-            pour offrir une expérience d’entraînement fluide, efficace et premium.
-          </p>
         </div>
       </section>
 
-      {/* SECTION: ESPACES */}
-      <section className="section sectionAlt" id="espaces">
-        <div className="container">
-          <div className="grid2">
-            <div>
-              <h2 className="h2">Nos espaces d’entraînement à Nouméa</h2>
-              <p className="lead">Des environnements distincts, une même exigence.</p>
-              <ul className="list">
-                <li>Plateaux de musculation dernière génération</li>
-                <li>Zones fonctionnelles & performance</li>
-                <li>Studios de cours collectifs immersifs</li>
-                <li>Espaces récupération & mobilité</li>
-              </ul>
-              <p className="text">
-                Tout est pensé pour l’efficacité. Rien n’est laissé au hasard.
-              </p>
-              <button className="btnPrimary" onClick={() => scrollToId("membre")}>
-                Explorer nos espaces
-              </button>
-            </div>
+      <section className="section-pad">
+        <div className="container-wide">
+          <SectionHeader
+            eyebrow="Ce que vous obtenez"
+            title="Un écosystème complet pour votre performance"
+            subtitle="Chaque détail est conçu pour offrir une expérience premium, du coaching à la récupération."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {content.valueProps.map((item) => (
+              <div key={item.title} className="rounded-3xl border border-border bg-surface p-6">
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm text-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* “Carte visuelle” sans image (tu pourras remplacer plus tard) */}
-            <div className="cardVisual">
-              <div className="cardVisualInner">
-                <div className="metric">
-                  <span className="metricLabel">Standard</span>
-                  <span className="metricValue">Premium</span>
-                </div>
-                <div className="divider" />
-                <div className="metric">
-                  <span className="metricLabel">Approche</span>
-                  <span className="metricValue">Structurée</span>
-                </div>
-                <div className="divider" />
-                <div className="metric">
-                  <span className="metricLabel">Focus</span>
-                  <span className="metricValue">Résultats</span>
-                </div>
+      <section className="section-pad bg-surface">
+        <div className="container-wide">
+          <ClubFinder />
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="container-wide">
+          <SectionHeader
+            eyebrow="Abonnements"
+            title="Choisissez la formule qui vous ressemble"
+            subtitle="Des formules flexibles et transparentes, inspirées des meilleures expériences internationales."
+          />
+          <MembershipComparison />
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface">
+        <div className="container-wide grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+          <div>
+            <SectionHeader
+              eyebrow="My Fitness Connecté"
+              title={content.appPromo.title}
+              subtitle="Pilotez votre entraînement avec des données précises et un planning toujours à jour."
+            />
+            <ul className="grid gap-3 text-sm text-muted">
+              {content.appPromo.bullets.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-muted">
+              MY FITNESS CONNECTÉ by FORM+ vous donne tout ce dont vous avez besoin pour un entraînement sûr, motivant et orienté résultats.
+            </p>
+            <Button href="/contact" className="mt-8">Découvrir l’app</Button>
+          </div>
+          <div className="relative min-h-[360px]">
+            <Image src="/assets/placeholders/app.svg" alt="Application FORM+" fill className="object-contain" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="container-wide">
+          <SectionHeader
+            eyebrow="Ils parlent de nous"
+            title="Une communauté engagée, des résultats visibles"
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { quote: 'Un club premium, une énergie incroyable.', name: 'Camille · Vata' },
+              { quote: 'Des coachs ultra présents et un planning riche.', name: 'Jules · Almatrium' },
+              { quote: 'Le meilleur équilibre entre muscu et bien-être.', name: 'Sofia · Normandie' }
+            ].map((item) => (
+              <div key={item.name} className="rounded-3xl border border-border bg-surface p-6">
+                <p className="text-lg">“{item.quote}”</p>
+                <p className="mt-4 text-sm text-muted">{item.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface">
+        <div className="container-wide grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center">
+          <div>
+            <SectionHeader
+              eyebrow="Nous suivre"
+              title="Inspirez-vous au quotidien"
+              subtitle="Suivez FORM+ pour les entraînements, conseils et succès de la communauté."
+            />
+            <div className="flex gap-6 text-sm text-muted">
+              <a className="hover:text-text" href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a className="hover:text-text" href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a className="hover:text-text" href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+            </div>
+          </div>
+          <div className="rounded-3xl border border-border bg-bg p-6">
+            <p className="text-sm uppercase tracking-[0.3em] text-muted">Stats</p>
+            <div className="mt-4 grid gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-muted">Membres actifs</span>
+                <span className="text-lg font-semibold">+2 000</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-muted">Cours par semaine</span>
+                <span className="text-lg font-semibold">50+</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-muted">Note Google</span>
+                <span className="text-lg font-semibold">4,8 / 5</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION: EXPERIENCE */}
-      <section className="section" id="experience">
-        <div className="container">
-          <h2 className="h2">Une approche structurée</h2>
-          <p className="lead">
-            Chez FORM+, l’adhésion n’est pas un simple accès. C’est une entrée dans un cadre.
+      <section className="section-pad bg-surface">
+        <div className="container-wide">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="On répond à vos questions"
+          />
+          <FaqAccordion items={content.faq} />
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="container-wide rounded-3xl border border-border bg-gradient-to-r from-primary to-[#ff8a3d] p-10 text-bg">
+          <h2 className="text-3xl font-display font-semibold">Prêt à rejoindre FORM+ ?</h2>
+          <p className="mt-3 max-w-2xl text-sm text-bg/80">
+            Réservez un essai, découvrez nos clubs et choisissez votre formule idéale.
           </p>
-
-          <div className="features">
-            <div className="feature">
-              <h3 className="h3">Encadrement professionnel</h3>
-              <p className="text">
-                Une équipe présente, exigeante, tournée vers la progression.
-              </p>
-            </div>
-            <div className="feature">
-              <h3 className="h3">Programmes structurés</h3>
-              <p className="text">
-                Une programmation claire, pensée pour avancer et performer.
-              </p>
-            </div>
-            <div className="feature">
-              <h3 className="h3">Équipements premium</h3>
-              <p className="text">
-                Matériel sélectionné pour sa fiabilité, son confort et son efficacité.
-              </p>
-            </div>
-            <div className="feature">
-              <h3 className="h3">Standards élevés</h3>
-              <p className="text">
-                Hygiène, fluidité, confort : une expérience sans friction.
-              </p>
-            </div>
-          </div>
-
-          <p className="text subtle">
-            Nous privilégions la qualité à la quantité.
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION: COMMUNAUTE */}
-      <section className="section sectionAlt">
-        <div className="container">
-          <h2 className="h2">Une communauté exigeante</h2>
-          <p className="lead">FORM+ rassemble celles et ceux qui prennent leur entraînement au sérieux.</p>
-
-          <div className="pillRow">
-            <span className="pill">Performance</span>
-            <span className="pill">Discipline</span>
-            <span className="pill">Résultats</span>
-            <span className="pill">Environnement qualitatif</span>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Button href="/abonnements" className="bg-bg text-text">S'inscrire</Button>
+            <Button href="/contact" variant="secondary" className="border-bg text-bg">Essai</Button>
           </div>
         </div>
       </section>
-
-      {/* SECTION: EVOLUTION */}
-      <section className="section">
-        <div className="container">
-          <h2 className="h2">En constante optimisation</h2>
-          <p className="text">
-            FORM+ poursuit son développement et concentre actuellement son énergie sur
-            l’optimisation de ses espaces existants afin d’offrir une expérience toujours
-            plus qualitative à ses membres.
-          </p>
-          <p className="text subtle">Notre priorité : améliorer, affiner, perfectionner.</p>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="section cta" id="membre">
-        <div className="container ctaInner">
-          <div>
-            <h2 className="h2">Rejoindre FORM+</h2>
-            <p className="lead">
-              L’excellence n’est pas un hasard. Elle se construit.
-            </p>
-          </div>
-
-          <div className="ctaBtns">
-            <a className="btnPrimary" href="/contact">
-              Devenir membre
-            </a>
-            <a className="btnSecondary" href="/contact">
-              Nous contacter
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="footer">
-        <div className="container footerInner">
-          <div className="brandSmall">FORM+</div>
-          <div className="footerLinks">
-            <a href="#espaces">Espaces</a>
-            <a href="#experience">Expérience</a>
-            <a href="/memberships">Adhésions</a>
-            <a href="/contact">Contact</a>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </div>
   );
 }

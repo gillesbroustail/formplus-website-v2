@@ -65,7 +65,7 @@ export const content = {
       title: 'Premium performance by FORM+',
       subtitle: 'Clubs, coaching, and energy that transform your routine.',
       primaryCta: 'Join',
-      secondaryCta: 'View memberships'
+      secondaryCta: 'View plans'
     },
     valueProps: [],
     appPromo: {

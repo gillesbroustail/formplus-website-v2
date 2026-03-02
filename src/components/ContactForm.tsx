@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -14,6 +15,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export function ContactForm() {
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -22,14 +25,22 @@ export function ContactForm() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    setSubmitError(null);
 
-    if (response.ok) {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error('request_failed');
+      }
+
       reset();
+    } catch {
+      setSubmitError("Une erreur s'est produite. Veuillez réessayer.");
     }
   };
 
@@ -38,6 +49,8 @@ export function ContactForm() {
       <div>
         <input
           {...register('name')}
+          type="text"
+          autoComplete="name"
           placeholder="Nom"
           aria-label="Nom"
           className="w-full rounded-full border border-border bg-bg px-5 py-3 text-sm"
@@ -47,6 +60,8 @@ export function ContactForm() {
       <div>
         <input
           {...register('email')}
+          type="email"
+          autoComplete="email"
           placeholder="Email"
           aria-label="Email"
           className="w-full rounded-full border border-border bg-bg px-5 py-3 text-sm"
@@ -56,6 +71,8 @@ export function ContactForm() {
       <div>
         <input
           {...register('phone')}
+          type="tel"
+          autoComplete="tel"
           placeholder="Téléphone"
           aria-label="Téléphone"
           className="w-full rounded-full border border-border bg-bg px-5 py-3 text-sm"
@@ -75,11 +92,14 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-full bg-primary px-6 py-3 text-xs uppercase tracking-[0.3em] text-bg"
+        className="rounded-full bg-primary px-6 py-3 text-xs uppercase tracking-[0.3em] text-bg transition disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? 'Envoi...' : "Envoyer"}
       </button>
-      {isSubmitSuccessful ? (
+      {submitError ? (
+        <p className="text-sm text-primary" role="status" aria-live="polite">{submitError}</p>
+      ) : null}
+      {isSubmitSuccessful && !submitError ? (
         <p className="text-sm text-muted">Merci, nous revenons vers vous rapidement.</p>
       ) : null}
     </form>
