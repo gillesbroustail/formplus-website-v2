@@ -11,6 +11,7 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [debugCode, setDebugCode] = useState('');
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,6 +32,7 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
     setIsSubmitting(true);
     setStatus('idle');
     setErrorMessage('');
+    setDebugCode('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -44,15 +46,33 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
         })
       });
 
-      if (!response.ok) {
-        throw new Error('invalid_payload');
+      let responseData: { ok?: boolean; error?: string } | null = null;
+      try {
+        responseData = await response.json();
+      } catch {
+        responseData = null;
+      }
+
+      if (!response.ok || responseData?.ok === false) {
+        const code = responseData?.error || `http_${response.status}`;
+        setDebugCode(code);
+
+        if (code === 'invalid_payload' || code === 'invalid_json') {
+          throw new Error('Vos informations semblent invalides. Verifiez nom, email et telephone.');
+        }
+
+        throw new Error('Envoi impossible pour le moment.');
       }
 
       setStatus('success');
       event.currentTarget.reset();
-    } catch {
+    } catch (error) {
       setStatus('error');
-      setErrorMessage('Envoi impossible. Verifiez vos informations puis reessayez.');
+      setErrorMessage(
+        error instanceof Error
+          ? `${error.message} Verifiez vos informations puis reessayez.`
+          : 'Envoi impossible. Verifiez vos informations puis reessayez.'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -126,6 +146,7 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
       {status === 'error' ? (
         <p className="mt-4 rounded-md border border-border bg-bg px-4 py-3 text-sm text-text">
           {errorMessage}
+          {debugCode ? <span className="ml-2 text-muted">({debugCode})</span> : null}
         </p>
       ) : null}
     </div>
