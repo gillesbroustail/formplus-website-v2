@@ -14,7 +14,7 @@ export default function HomePage() {
     <div>
       <section className="relative min-h-[90vh] overflow-hidden">
         <Image
-          src="/assets/placeholders/hero.svg"
+          src="/assets/brand/hero.jpg"
           alt="FORM+ performance"
           fill
           className="object-cover opacity-70"
@@ -100,7 +100,7 @@ export default function HomePage() {
             <Button href="/contact" className="mt-8">Découvrir l’app</Button>
           </div>
           <div className="relative min-h-[360px]">
-            <Image src="/assets/placeholders/app.svg" alt="Application FORM+" fill className="object-contain" />
+            <Image src="/assets/brand/app.jpg" alt="Application FORM+" fill className="object-contain" />
           </div>
         </div>
       </section>

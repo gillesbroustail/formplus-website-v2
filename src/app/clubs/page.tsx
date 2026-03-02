@@ -12,10 +12,10 @@ export default function ClubsPage() {
     <div className="container-wide section-pad">
       <SectionHeader
         eyebrow="Nos clubs"
-        title="Trois destinations premium pour s'entraîner"
+        title="Deux destinations premium pour s'entraîner"
         subtitle="Retrouvez l'expérience FORM+ là où vous vivez."
       />
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {clubs.map((club) => (
           <div key={club.id} className="rounded-3xl border border-border bg-surface overflow-hidden">
             <div className="relative h-48">

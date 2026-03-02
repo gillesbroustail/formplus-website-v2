@@ -21,7 +21,7 @@ export const clubs: Club[] = [
     phone: '+687 20 30 40',
     hours: ['Lun - Ven: 05:00 - 22:00', 'Sam: 06:00 - 20:00', 'Dim: 07:00 - 18:00'],
     amenities: ['Plateau musculation premium', 'Cours collectifs +ZEN', 'Cardio connecté', 'Coach dédié', 'Espaces récupération'],
-    heroImage: '/assets/placeholders/club.svg',
+    heroImage: '/assets/brand/club-vata.jpg',
     description: "Un cadre exceptionnel pour s’entraîner avec une équipe experte et des équipements premium."
   },
   {
@@ -33,7 +33,7 @@ export const clubs: Club[] = [
     phone: '+687 21 31 41',
     hours: ['Lun - Ven: 05:30 - 21:30', 'Sam: 06:00 - 19:00', 'Dim: 07:00 - 18:00'],
     amenities: ['Studio cycling', 'Zone HIIT', 'Coaching personnalisé', 'Lockers premium'],
-    heroImage: '/assets/placeholders/club.svg',
+    heroImage: '/assets/brand/club-almatrium.jpg',
     description: "Le club du centre‑ville pour s’entraîner au cœur de Nouméa."
   }
 ];
