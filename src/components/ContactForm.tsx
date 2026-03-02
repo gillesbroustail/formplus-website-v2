@@ -26,9 +26,10 @@ type FormValues = z.infer<typeof schema>;
 
 type ContactFormProps = {
   initialInterest?: 'formplus' | 'pluszen' | 'both';
+  initialOffer?: string;
 };
 
-export function ContactForm({ initialInterest = 'formplus' }: ContactFormProps) {
+export function ContactForm({ initialInterest = 'formplus', initialOffer = '' }: ContactFormProps) {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
@@ -41,7 +42,8 @@ export function ContactForm({ initialInterest = 'formplus' }: ContactFormProps) 
     resolver: zodResolver(schema),
     defaultValues: {
       interest: initialInterest,
-      shareWithZen: false
+      shareWithZen: false,
+      message: initialOffer ? `Je souhaite etre contacte pour l'offre Studio +ZEN: ${initialOffer}.` : ''
     }
   });
 
@@ -56,6 +58,7 @@ export function ContactForm({ initialInterest = 'formplus' }: ContactFormProps) 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          offer: initialOffer || undefined,
           source: 'contact_page'
         })
       });

@@ -6,6 +6,7 @@ const contactSchema = z.object({
   email: z.string().email(),
   phone: z.string().min(5),
   message: z.string().min(1),
+  offer: z.string().optional(),
   interest: z.enum(['formplus', 'pluszen', 'both']).optional().default('formplus'),
   shareWithZen: z.boolean().optional().default(false),
   source: z.string().optional().default('website')
@@ -49,6 +50,7 @@ async function sendWithResend(to: string[], payload: ContactPayload, audience: '
     `Audience: ${audience}`,
     `Source: ${payload.source}`,
     `Interet: ${payload.interest}`,
+    `Offre: ${payload.offer || '-'}`,
     `Partage +ZEN: ${payload.shareWithZen ? 'oui' : 'non'}`,
     '',
     `Nom: ${payload.name}`,
@@ -63,6 +65,7 @@ async function sendWithResend(to: string[], payload: ContactPayload, audience: '
     <h2>Nouvelle demande ${escapeHtml(audience)}</h2>
     <p><strong>Source:</strong> ${escapeHtml(payload.source)}</p>
     <p><strong>Interet:</strong> ${escapeHtml(payload.interest)}</p>
+    <p><strong>Offre:</strong> ${escapeHtml(payload.offer || '-')}</p>
     <p><strong>Partage +ZEN:</strong> ${payload.shareWithZen ? 'oui' : 'non'}</p>
     <p><strong>Nom:</strong> ${escapeHtml(payload.name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
