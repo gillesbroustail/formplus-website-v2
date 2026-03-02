@@ -1,4 +1,5 @@
 import { Clock3 } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/Button';
 
 export function PlanningHero() {
@@ -8,7 +9,18 @@ export function PlanningHero() {
       <div className="relative max-w-4xl">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Planning fitness Noumea</p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tightest text-text md:text-6xl">
-          Votre planning FORM+ —{' '}
+          Votre planning{' '}
+          <span className="inline-flex translate-y-1 align-middle md:translate-y-2">
+            <Image
+              src="/assets/brand/formplus-logo.png"
+              alt="FORM+"
+              width={640}
+              height={181}
+              className="h-8 w-auto md:h-11"
+              priority
+            />
+          </span>{' '}
+          —{' '}
           <span className="inline-flex items-center gap-2">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-text/40 align-middle md:h-9 md:w-9">
               <Clock3 className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
