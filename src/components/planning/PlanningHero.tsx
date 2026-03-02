@@ -13,7 +13,7 @@ export function PlanningHero() {
           Organisez vos cours collectifs avec clarte et precision: planning en temps reel, filtres intelligents et parcours premium pour votre salle de sport a Noumea.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Button href="#planning-module">Explorer le planning</Button>
+          <Button href="#planning-realtime">Explorer le planning</Button>
           <Button href="/abonnements" variant="secondary">Devenir membre</Button>
         </div>
       </div>
