@@ -46,7 +46,7 @@ export default function AbonnementsPage() {
       <div className="mt-16 rounded-3xl border border-border bg-surface p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-muted">Infos pratiques</p>
         <ul className="mt-4 grid gap-2 text-sm text-muted">
-          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Possibilité de suspension d’abonnement (945 F / mois) selon conditions.</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Possibilité de suspension d’abonnement (945 F / 4 semaines) selon conditions.</li>
           <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Accès multi-clubs selon formule.</li>
           <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Réservations via application membre.</li>
         </ul>
