@@ -5,7 +5,7 @@ export const siteConfig = {
   socials: {
     instagram: 'https://www.instagram.com/formplusnc/?hl=en',
     facebook: 'https://www.facebook.com/FORMPLUS',
-    twitter: 'https://twitter.com/FORMPLUSNC',
+    twitter: 'https://x.com/FORMPLUSNC',
     email: 'info@formplus.nc'
   },
   appLinks: {

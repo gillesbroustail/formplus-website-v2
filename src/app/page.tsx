@@ -143,7 +143,7 @@ export default async function HomePage() {
             <div className="flex gap-6 text-sm text-muted">
               <a className="hover:text-text" href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
               <a className="hover:text-text" href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a className="hover:text-text" href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a className="hover:text-text" href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer">X</a>
             </div>
           </div>
           <div className="rounded-3xl border border-border bg-bg p-6">

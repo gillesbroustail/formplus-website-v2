@@ -11,7 +11,7 @@ export function Footer() {
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Instagram</a>
             <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Facebook</a>
-            <a href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">Twitter</a>
+            <a href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">X</a>
             <a href={`mailto:${siteConfig.socials.email}`} className="text-muted hover:text-text">Email</a>
           </div>
         </div>
