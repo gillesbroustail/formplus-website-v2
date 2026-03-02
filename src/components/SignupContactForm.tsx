@@ -15,7 +15,8 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
 
     const name = String(formData.get('name') || '').trim();
     const email = String(formData.get('email') || '').trim();
@@ -65,7 +66,7 @@ export function SignupContactForm({ planName, clubName }: SignupContactFormProps
       }
 
       setStatus('success');
-      event.currentTarget.reset();
+      formElement.reset();
     } catch (error) {
       setStatus('error');
       setErrorMessage(
