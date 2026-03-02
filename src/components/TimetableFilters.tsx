@@ -27,14 +27,32 @@ export function TimetableFilters() {
 
   if (timetableEmbedUrl) {
     return (
-      <div className="rounded-3xl border border-border bg-surface p-4">
-        <iframe
-          src={timetableEmbedUrl}
-          className="h-[700px] w-full rounded-2xl border-0"
-          title="Planning FORM+"
-        />
-        <p className="mt-3 text-sm text-muted">
-          Si le planning ne se charge pas, veuillez contacter l’accueil de votre club.
+      <div className="rounded-3xl border border-border bg-[#0a0a0a] p-4 md:p-6">
+        <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-border bg-surface px-4 py-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-muted">Deciplus</p>
+            <p className="mt-1 text-sm text-muted">Planning officiel synchronisé en temps réel.</p>
+          </div>
+          <a
+            href={timetableEmbedUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-xs uppercase tracking-[0.2em] text-text transition hover:border-primary"
+          >
+            Ouvrir en plein écran
+          </a>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-border bg-bg shadow-[0_12px_38px_rgba(0,0,0,0.35)]">
+          <iframe
+            src={timetableEmbedUrl}
+            className="h-[780px] w-full border-0"
+            title="Planning FORM+"
+          />
+        </div>
+
+        <p className="mt-4 text-sm text-muted">
+          Si le planning ne se charge pas, ouvrez-le en plein écran ou contactez l’accueil de votre club.
         </p>
       </div>
     );
@@ -42,10 +60,16 @@ export function TimetableFilters() {
 
   if (timetableEmbedWidget) {
     return (
-      <div className="rounded-3xl border border-border bg-surface p-4">
-        <div className="mindbody-widget" data-widget-type="Schedules" data-widget-id={timetableEmbedWidget.widgetId} />
+      <div className="rounded-3xl border border-border bg-[#0a0a0a] p-4 md:p-6">
+        <div className="mb-4 rounded-2xl border border-border bg-surface px-4 py-4">
+          <p className="text-xs uppercase tracking-[0.32em] text-muted">Planning live</p>
+          <p className="mt-1 text-sm text-muted">Données officielles synchronisées.</p>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border bg-bg shadow-[0_12px_38px_rgba(0,0,0,0.35)] p-4">
+          <div className="mindbody-widget" data-widget-type="Schedules" data-widget-id={timetableEmbedWidget.widgetId} />
+        </div>
         <Script src={timetableEmbedWidget.scriptSrc} strategy="afterInteractive" />
-        <p className="mt-3 text-sm text-muted">
+        <p className="mt-4 text-sm text-muted">
           Si le planning ne se charge pas, contactez l’accueil de votre club.
         </p>
       </div>
