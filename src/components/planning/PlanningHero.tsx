@@ -10,23 +10,23 @@ export function PlanningHero() {
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Planning fitness Noumea</p>
         <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tightest text-text md:text-6xl">
           <span className="block">Votre planning</span>
-          <span className="mt-3 flex flex-wrap items-center gap-3 md:gap-4">
-            <span className="inline-flex items-center">
+          <span className="mt-4 block text-[2rem] leading-[1.08] md:text-[3.25rem]">
+            <span className="inline-flex flex-wrap items-center gap-3 md:gap-4">
               <Image
                 src="/assets/brand/formplus-logo.png"
                 alt="FORM+"
                 width={640}
                 height={181}
-                className="h-7 w-auto md:h-10"
+                className="h-6 w-auto opacity-90 md:h-8"
                 priority
               />
-            </span>
-            <span className="text-text/45">—</span>
-            <span className="inline-flex items-center gap-2">
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-text/35 align-middle md:h-9 md:w-9">
-                <Clock3 className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+              <span className="text-text/40">•</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-text/30 bg-surface align-middle md:h-8 md:w-8">
+                  <Clock3 className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <span>qu&apos;un horaire, une expérience.</span>
               </span>
-              <span>qu&apos;un horaire, une expérience.</span>
             </span>
           </span>
         </h1>
