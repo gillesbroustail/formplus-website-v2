@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { PlanningHero } from '@/components/planning/PlanningHero';
 import { PlanningValueProps } from '@/components/planning/PlanningValueProps';
-import { PlanningModuleMock } from '@/components/planning/PlanningModuleMock';
 import { PlanningHowItWorks } from '@/components/planning/PlanningHowItWorks';
 import { PlanningAppPromo } from '@/components/planning/PlanningAppPromo';
 import { PlanningFinalCta } from '@/components/planning/PlanningFinalCta';
@@ -20,7 +19,6 @@ export default function PlanningPage() {
     <div className="container-wide section-pad">
       <PlanningHero />
       <PlanningValueProps />
-      <PlanningModuleMock />
 
       <section className="section-pad pt-2" id="planning-realtime" aria-label="Planning en temps réel Deciplus">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
