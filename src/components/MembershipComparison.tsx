@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { membershipPlans, membershipSections } from '@/config/memberships';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 export function MembershipComparison() {
@@ -50,7 +51,12 @@ export function MembershipComparison() {
                 </li>
               ))}
             </ul>
-            <button className="mt-6 w-full rounded-full border border-border py-3 text-xs uppercase tracking-[0.3em] hover:border-primary hover:text-primary">Je choisis</button>
+            <Link
+              href={`/inscription/choix-club?plan=${plan.id}`}
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-border py-3 text-xs uppercase tracking-[0.3em] transition hover:border-primary hover:text-primary"
+            >
+              Je choisis
+            </Link>
           </div>
         ))}
       </div>
