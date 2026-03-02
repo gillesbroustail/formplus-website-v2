@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/clubs',
     '/abonnements',
-    '/cours',
     '/planning',
     '/espace-membre',
     '/amis',

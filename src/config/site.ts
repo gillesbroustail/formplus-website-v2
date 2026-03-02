@@ -20,7 +20,6 @@ export const siteConfig = {
     { label: 'Accueil', href: '/' },
     { label: 'Clubs', href: '/clubs' },
     { label: 'Abonnements', href: '/abonnements' },
-    { label: 'Cours', href: '/cours' },
     { label: 'Planning', href: '/planning' },
     { label: 'Espace membre', href: '/espace-membre' },
     { label: 'Amis de FORM+', href: '/amis' },
