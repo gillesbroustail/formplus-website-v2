@@ -12,7 +12,7 @@ export async function StudioZenPricingSection() {
   ].filter((group) => group.offers.length > 0);
 
   return (
-    <section className="mt-14" aria-label="Tarifs Studio +ZEN">
+    <section id="studio-zen-pricing" className="mt-14" aria-label="Tarifs Studio +ZEN">
       <div className="mb-8">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Tarifs importes Studio +ZEN</p>
         <h2 className="mt-3 font-display text-3xl font-semibold tracking-tightest md:text-4xl">

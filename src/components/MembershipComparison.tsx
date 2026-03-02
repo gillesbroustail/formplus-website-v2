@@ -30,6 +30,12 @@ export function MembershipComparison() {
             {section.title}
           </button>
         ))}
+        <Link
+          href="#studio-zen-pricing"
+          className="rounded-full border border-border px-5 py-2 text-xs uppercase tracking-[0.3em] text-muted transition hover:text-text"
+        >
+          Studio +ZEN
+        </Link>
       </div>
 
       <div className="mt-5 grid gap-4 md:grid-cols-[1.4fr_1fr]">
