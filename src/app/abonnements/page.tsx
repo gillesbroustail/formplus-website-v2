@@ -1,63 +1,66 @@
 import { SectionHeader } from '@/components/SectionHeader';
-import Image from 'next/image';
 import { MembershipComparison } from '@/components/MembershipComparison';
+import { membershipSections } from '@/config/memberships';
 import { Button } from '@/components/Button';
-import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
-import { StudioZenPricingSection } from '@/components/StudioZenPricingSection';
 
 export const metadata = {
-  title: 'Abonnements'
+  title: 'Abonnements FORM+ | Salle de sport premium à Nouméa',
+  description:
+    'Comparez les abonnements FORM+ à Nouméa: cours collectifs, muscu cardio, FAMILY+ et Studio +ZEN. Trouvez la formule qui vous correspond.'
 };
 
 export default function AbonnementsPage() {
   return (
     <div className="container-wide section-pad">
-      <SectionHeader
-        eyebrow="Abonnements"
-        title="Le sur mesure de FORM+"
-        subtitle="Comparez facilement nos formules et trouvez celle qui vous convient le mieux."
-      />
+      <section className="rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
+        <SectionHeader
+          eyebrow="Abonnements"
+          title="Le sur mesure de FORM+"
+          subtitle="Comparez rapidement nos formules, puis choisissez votre offre en moins d’une minute."
+        />
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Cours collectifs + muscu cardio</div>
+          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Avec ou sans engagement</div>
+          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Formules FAMILY+ et Studio +ZEN</div>
+          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Accompagnement par l’équipe FORM+</div>
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href="#comparateur-abonnements">Comparer les offres</Button>
+          <Button href="/contact" variant="secondary">Parler à un conseiller</Button>
+        </div>
+      </section>
 
-      <p className="max-w-3xl text-sm text-muted">
-        Cliquez sur les catégories de la comparaison pour trouver rapidement l'offre qui vous correspond.
-      </p>
+      <div className="mt-16 grid gap-6 md:grid-cols-5">
+        {membershipSections.map((section) => (
+          <div key={section.id} className="rounded-2xl border border-border bg-surface p-4">
+            <p className="text-sm uppercase tracking-[0.3em] text-muted">{section.title}</p>
+            <p className="mt-2 text-sm text-muted">{section.subtitle}</p>
+          </div>
+        ))}
+      </div>
 
       <div className="mt-12">
         <MembershipComparison />
       </div>
 
-      <section className="mt-14">
-        <div className="grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
-          <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-border">
-            <Image src="/assets/brand/club-vata.jpg" alt="Abonnements FORM+ premium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/15 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">Offres premium</p>
-          </div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-border">
-            <Image src="/assets/brand/club-almatrium.jpg" alt="Communauté FORM+ et Studio +ZEN" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/15 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ x Studio +ZEN</p>
-          </div>
-        </div>
-      </section>
-
-      <StudioZenPricingSection />
-
-      <ZenEcosystemSection compact />
-
       <div className="mt-16 rounded-3xl border border-border bg-surface p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-muted">Infos pratiques</p>
-        <p className="mt-3 text-sm text-muted">
-          Possibilité de suspension d’abonnement (945 F / mois) selon conditions.
-        </p>
-        <div className="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-center">
+        <ul className="mt-4 grid gap-2 text-sm text-muted">
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Possibilité de suspension d’abonnement (945 F / mois) selon conditions.</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Accès multi-clubs selon formule.</li>
+          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" />Réservations via application membre.</li>
+        </ul>
+        <div className="mt-8 flex flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <h2 className="text-2xl font-display font-semibold">Envie d’un essai FORM+ ?</h2>
             <p className="mt-2 text-sm text-muted">
               Réservez un essai personnalisé et découvrez la formule qui vous correspond.
             </p>
           </div>
-          <Button href="/contact">Réserver un essai</Button>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href="/contact">Réserver un essai</Button>
+            <Button href="/planning" variant="secondary">Voir le planning</Button>
+          </div>
         </div>
       </div>
     </div>
