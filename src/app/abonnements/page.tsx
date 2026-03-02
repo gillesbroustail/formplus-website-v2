@@ -26,44 +26,6 @@ export default function AbonnementsPage() {
 
       <ZenEcosystemSection compact />
 
-      <div className="mt-16">
-        <SectionHeader
-          eyebrow="Comprendre les formules"
-          title="Un seul bloc clair pour comparer l'esprit de chaque offre"
-          subtitle="Voici les différences clés entre les grandes familles d'abonnements FORM+."
-        />
-      </div>
-
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
-        <div className="rounded-3xl border border-border bg-surface p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Sans engagement</p>
-          <p className="mt-3 text-sm text-muted">
-            Que ce soit pour découvrir FORM+, apporter un complément à votre activité sportive principale ou tout simplement parce que vous aimez être libre de changer vos habitudes, FORM+ vous offre 4 solutions.
-          </p>
-        </div>
-
-        <div className="rounded-3xl border border-border bg-surface p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Cours collectifs</p>
-          <p className="mt-3 text-sm text-muted">
-            Envie d’expériences de fitness qui garantissent un maximum de fun, de plaisir, de motivation et de résultats ? Optez pour les abonnements avec Cours Collectifs de FORM+.
-          </p>
-        </div>
-
-        <div className="rounded-3xl border border-border bg-surface p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Muscu cardio</p>
-          <p className="mt-3 text-sm text-muted">
-            Deux formules vous sont proposées : AMC Liberté à 6 490 F/mois (minimum 3 prélèvements) et AMC à 5 490 F/mois (minimum 12 prélèvements).
-          </p>
-        </div>
-
-        <div className="rounded-3xl border border-border bg-surface p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">FAMILY+</p>
-          <p className="mt-3 text-sm text-muted">
-            Selon la formule retenue, vous pouvez désigner jusqu’à cinq (5) co‑utilisateurs. FAMILY+ est la solution pour toute la famille.
-          </p>
-        </div>
-      </div>
-
       <div className="mt-16 rounded-3xl border border-border bg-surface p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-muted">Infos pratiques</p>
         <p className="mt-3 text-sm text-muted">

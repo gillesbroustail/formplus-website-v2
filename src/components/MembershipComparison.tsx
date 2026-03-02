@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 
 export function MembershipComparison() {
   const [active, setActive] = useState(membershipSections[0].id);
+  const activeSection = membershipSections.find((section) => section.id === active) ?? membershipSections[0];
 
   const plans = useMemo(() => {
     return membershipPlans.filter((plan) => plan.category === active);
@@ -30,6 +31,40 @@ export function MembershipComparison() {
           </button>
         ))}
       </div>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {membershipSections.map((section) => (
+          <article
+            key={section.id}
+            className={cn(
+              'rounded-2xl border bg-surface p-4 transition',
+              section.id === active ? 'border-primary' : 'border-border'
+            )}
+          >
+            <p className="text-xs uppercase tracking-[0.28em] text-muted">{section.title}</p>
+            <p className="mt-2 text-sm text-muted">{section.subtitle}</p>
+          </article>
+        ))}
+        <article className="rounded-2xl border border-border bg-surface p-4">
+          <p className="text-xs uppercase tracking-[0.28em] text-muted">+ZEN</p>
+          <p className="mt-2 text-sm text-muted">
+            Studio situé dans FORM+ Vata: Reformer Pilates, Fly Yoga, Yoga et Pilates.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-3 text-xs">
+            <a href="https://www.pluszen.nc/#1" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text">
+              Voir +ZEN
+            </a>
+            <Link href="/contact?interest=pluszen" className="text-muted hover:text-text">
+              Demander +ZEN
+            </Link>
+          </div>
+        </article>
+      </div>
+
+      <p className="mt-4 text-sm text-muted">
+        Catégorie active: <span className="text-text">{activeSection.title}</span> — {activeSection.subtitle}
+      </p>
+
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         {plans.map((plan) => (
           <div key={plan.id} className="rounded-3xl border border-border bg-surface p-6">
