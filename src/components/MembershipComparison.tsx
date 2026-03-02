@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import { membershipPlans, membershipSections } from '@/config/memberships';
 import { cn } from '@/lib/utils';
 
@@ -14,18 +13,17 @@ export function MembershipComparison() {
   };
 
   const allSections = [...membershipSections, zenSection];
-  const searchParams = useSearchParams();
   const [active, setActive] = useState(
     membershipSections.find((section) => section.id === 'cours-collectifs')?.id ?? membershipSections[0].id
   );
   const isZenActive = active === zenSection.id;
 
   useEffect(() => {
-    const fromQuery = searchParams.get('parcours');
+    const fromQuery = new URLSearchParams(window.location.search).get('parcours');
     if (!fromQuery) return;
     const exists = [...membershipSections.map((section) => section.id), zenSection.id].includes(fromQuery);
     if (exists) setActive(fromQuery);
-  }, [searchParams]);
+  }, []);
 
   const plans = useMemo(() => {
     return membershipPlans.filter((plan) => plan.category === active);
