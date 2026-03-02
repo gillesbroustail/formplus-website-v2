@@ -27,7 +27,7 @@ export const siteConfig = {
     { label: 'Contact', href: '/contact' }
   ],
   stats: [
-    { value: '3 clubs', label: 'à Nouméa' },
+    { value: '2 clubs', label: 'à Nouméa' },
     { value: '50+ cours', label: 'par semaine' },
     { value: '10+ coachs', label: 'experts' }
   ]

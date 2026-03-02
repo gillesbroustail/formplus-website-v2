@@ -35,17 +35,5 @@ export const clubs: Club[] = [
     amenities: ['Studio cycling', 'Zone HIIT', 'Coaching personnalisé', 'Lockers premium'],
     heroImage: '/assets/placeholders/club.svg',
     description: "Le club du centre‑ville pour s’entraîner au cœur de Nouméa."
-  },
-  {
-    id: 'normandie',
-    name: 'FORM+ Normandie',
-    slug: 'normandie',
-    address: 'Normandie, Nouméa',
-    city: 'Nouméa',
-    phone: '+687 22 32 42',
-    hours: ['Lun - Ven: 05:00 - 21:00', 'Sam: 06:00 - 19:00', 'Dim: 07:00 - 18:00'],
-    amenities: ['Cours collectifs', 'Zone stretching', 'Sauna & récupération', 'Parking privé'],
-    heroImage: '/assets/placeholders/club.svg',
-    description: "Le plus grand club de fitness de Nouvelle‑Calédonie."
   }
 ];

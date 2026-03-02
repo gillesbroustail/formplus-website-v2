@@ -115,7 +115,7 @@ export default function HomePage() {
             {[
               { quote: 'Un club premium, une énergie incroyable.', name: 'Camille · Vata' },
               { quote: 'Des coachs ultra présents et un planning riche.', name: 'Jules · Almatrium' },
-              { quote: 'Le meilleur équilibre entre muscu et bien-être.', name: 'Sofia · Normandie' }
+              { quote: 'Le meilleur équilibre entre muscu et bien-être.', name: 'Sofia · Nouméa' }
             ].map((item) => (
               <div key={item.name} className="rounded-3xl border border-border bg-surface p-6">
                 <p className="text-lg">“{item.quote}”</p>

@@ -168,7 +168,7 @@ export const partners: Partner[] = [
     category: 'SERVICES',
     description: "Offres exclusives pour les adhérents FORM+.",
     offer: '10% de remise sur devis.',
-    address: "1 rue Martial Danton, Parc d'Entreprise de la Yahoué, Normandie",
+    address: "1 rue Martial Danton, Parc d'Entreprise de la Yahoué",
     phone: '43 57 14',
     media: '/assets/placeholders/club.svg'
   },
