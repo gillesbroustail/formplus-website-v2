@@ -1,7 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { membershipPlans, membershipSections } from '@/config/memberships';
 import { cn } from '@/lib/utils';
 
@@ -13,10 +14,18 @@ export function MembershipComparison() {
   };
 
   const allSections = [...membershipSections, zenSection];
+  const searchParams = useSearchParams();
   const [active, setActive] = useState(
     membershipSections.find((section) => section.id === 'cours-collectifs')?.id ?? membershipSections[0].id
   );
   const isZenActive = active === zenSection.id;
+
+  useEffect(() => {
+    const fromQuery = searchParams.get('parcours');
+    if (!fromQuery) return;
+    const exists = [...membershipSections.map((section) => section.id), zenSection.id].includes(fromQuery);
+    if (exists) setActive(fromQuery);
+  }, [searchParams]);
 
   const plans = useMemo(() => {
     return membershipPlans.filter((plan) => plan.category === active);
@@ -25,6 +34,10 @@ export function MembershipComparison() {
 
   return (
     <section id="comparateur-abonnements" aria-label="Comparateur des abonnements FORM+">
+      <div className="mb-5 rounded-2xl border border-border bg-surface p-4">
+        <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 2</p>
+        <p className="mt-2 text-sm text-muted">Choisissez une catégorie, comparez les offres, puis cliquez sur “Je choisis” pour finaliser avec l’équipe FORM+.</p>
+      </div>
       <div className="flex flex-wrap gap-3">
         {allSections.map((section) => (
           <button

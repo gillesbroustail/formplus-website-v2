@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { SectionHeader } from '@/components/SectionHeader';
 import { MembershipComparison } from '@/components/MembershipComparison';
-import { membershipSections } from '@/config/memberships';
 import { Button } from '@/components/Button';
 
 export const metadata = {
@@ -30,13 +30,31 @@ export default function AbonnementsPage() {
         </div>
       </section>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-5">
-        {membershipSections.map((section) => (
-          <div key={section.id} className="rounded-2xl border border-border bg-surface p-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted">{section.title}</p>
-            <p className="mt-2 text-sm text-muted">{section.subtitle}</p>
-          </div>
-        ))}
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <article className="rounded-2xl border border-border bg-surface p-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 1</p>
+          <h2 className="mt-2 text-lg font-semibold">Choisissez votre objectif</h2>
+          <p className="mt-2 text-sm text-muted">Cours collectifs, musculation, liberté, famille ou Studio +ZEN.</p>
+          <Link href="/abonnements?parcours=cours-collectifs#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
+            Commencer
+          </Link>
+        </article>
+        <article className="rounded-2xl border border-border bg-surface p-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 2</p>
+          <h2 className="mt-2 text-lg font-semibold">Comparez les formules</h2>
+          <p className="mt-2 text-sm text-muted">Visualisez les prix, engagements, avantages et différences en un coup d’œil.</p>
+          <Link href="/abonnements?parcours=family#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
+            Voir FAMILY+
+          </Link>
+        </article>
+        <article className="rounded-2xl border border-border bg-surface p-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 3</p>
+          <h2 className="mt-2 text-lg font-semibold">Finalisez rapidement</h2>
+          <p className="mt-2 text-sm text-muted">Cliquez sur “Je choisis” puis l’équipe FORM+ vous recontacte pour finaliser.</p>
+          <Link href="/abonnements?parcours=studio-zen#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
+            Voir Studio +ZEN
+          </Link>
+        </article>
       </div>
 
       <div className="mt-12">
