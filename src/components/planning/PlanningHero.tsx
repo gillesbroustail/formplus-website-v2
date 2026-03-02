@@ -1,3 +1,4 @@
+import { Clock3 } from 'lucide-react';
 import { Button } from '@/components/Button';
 
 export function PlanningHero() {
@@ -7,7 +8,13 @@ export function PlanningHero() {
       <div className="relative max-w-4xl">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Planning fitness Noumea</p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-tightest text-text md:text-6xl">
-          Votre planning FORM+ — plus qu’un horaire, une expérience.
+          Votre planning FORM+ —{' '}
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-text/40 align-middle md:h-9 md:w-9">
+              <Clock3 className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+            </span>
+            <span>qu&apos;un horaire, une expérience.</span>
+          </span>
         </h1>
         <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
           Organisez vos cours collectifs avec clarte et precision: planning en temps reel, filtres intelligents et parcours premium pour votre salle de sport a Noumea.
