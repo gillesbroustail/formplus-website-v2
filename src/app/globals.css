@@ -72,3 +72,16 @@ h3 {
     padding: 76px 0;
   }
 }
+
+@keyframes media-pan {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+.motion-safe\:animate-media-pan {
+  animation: media-pan 18s ease-in-out infinite alternate;
+}

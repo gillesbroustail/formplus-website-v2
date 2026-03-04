@@ -6,6 +6,7 @@ import { MembershipComparison } from '@/components/MembershipComparison';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 import { MediaMosaicSection } from '@/components/MediaMosaicSection';
+import { HeroVideoBackdrop } from '@/components/HeroVideoBackdrop';
 import { getContent } from '@/content';
 import { siteConfig } from '@/config/site';
 import { getGoogleRating } from '@/lib/googleRating';
@@ -18,12 +19,11 @@ export default async function HomePage() {
   return (
     <div>
       <section className="relative min-h-[90vh] overflow-hidden">
-        <Image
-          src="/assets/brand/hero.jpg"
+        <HeroVideoBackdrop
+          posterSrc="/assets/brand/hero.jpg"
+          videoSrc="/assets/brand/hero-loop.mp4"
           alt="FORM+ performance"
-          fill
-          className="object-cover opacity-70"
-          priority
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/30" />
         <div className="relative container-wide flex min-h-[90vh] flex-col justify-center py-20">
@@ -31,7 +31,7 @@ export default async function HomePage() {
           <h1 className="mt-4 max-w-3xl text-4xl font-display font-semibold tracking-tightest md:text-6xl">
             {content.hero.title}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted">{content.hero.subtitle}</p>
+          <p className="mt-4 max-w-xl text-lg text-muted">{content.hero.subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/abonnements">{content.hero.primaryCta}</Button>
             <Button href="/abonnements" variant="secondary">{content.hero.secondaryCta}</Button>
@@ -102,6 +102,31 @@ export default async function HomePage() {
           ]}
         />
       </div>
+
+      <section className="section-pad pt-2">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border">
+          <HeroVideoBackdrop
+            posterSrc="/assets/brand/club-vata.jpg"
+            videoSrc="/assets/brand/club-loop.mp4"
+            alt="Atmosphere club FORM+"
+            className="absolute inset-0"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/35 to-transparent" />
+          <div className="relative z-10 max-w-2xl px-8 py-20 md:px-14 md:py-28">
+            <p className="text-xs uppercase tracking-[0.35em] text-muted">FORM+ Experience</p>
+            <h2 className="mt-4 text-4xl font-display font-semibold tracking-tightest md:text-6xl">
+              Training, style et precision.
+            </h2>
+            <p className="mt-4 text-base text-muted md:text-lg">
+              Une salle de sport Noumea pensee comme une experience premium, du premier check-in au dernier set.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href="/clubs">Explorer les clubs</Button>
+              <Button href="/abonnements" variant="secondary">Voir les offres</Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section-pad bg-surface">
         <div className="container-wide">

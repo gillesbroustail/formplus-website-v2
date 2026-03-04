@@ -3,6 +3,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { Button } from '@/components/Button';
 import { MediaMosaicSection } from '@/components/MediaMosaicSection';
+import { HeroVideoBackdrop } from '@/components/HeroVideoBackdrop';
 
 export const metadata = {
   title: 'Abonnements FORM+ | Salle de sport premium à Nouméa',
@@ -13,45 +14,45 @@ export const metadata = {
 export default function AbonnementsPage() {
   return (
     <div className="container-wide section-pad">
-      <section className="rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
+      <section className="relative overflow-hidden rounded-[2rem] border border-border p-8 md:p-12">
+        <HeroVideoBackdrop
+          posterSrc="/assets/brand/hero.jpg"
+          videoSrc="/assets/brand/abonnements-loop.mp4"
+          alt="Abonnements FORM+"
+          className="absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/75 to-bg/40" />
+        <div className="relative">
         <SectionHeader
           eyebrow="Abonnements"
           title="Le sur mesure de FORM+"
-          subtitle="Comparez rapidement nos formules, puis choisissez votre offre en moins d’une minute."
+          subtitle="Comparez nos formules en quelques secondes et activez votre parcours premium."
         />
-        <p className="max-w-2xl text-sm text-muted">
-          Commencez par comparer les offres, puis finalisez en quelques clics avec l’équipe FORM+.
-        </p>
+        <p className="max-w-xl text-sm text-muted">Un parcours clair: choisissez une categorie, comparez, puis cliquez sur “Je choisis”.</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href="#comparateur-abonnements">Comparer les offres</Button>
+          <Button href="/contact" variant="secondary">Parler a un conseiller</Button>
+        </div>
         </div>
       </section>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
-        <article className="rounded-2xl border border-border bg-surface p-5">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 1</p>
-          <h2 className="mt-2 text-lg font-semibold">Choisissez votre objectif</h2>
-          <p className="mt-2 text-sm text-muted">Cours collectifs, musculation, liberté, famille ou Studio +ZEN.</p>
-          <Link href="/abonnements?parcours=cours-collectifs#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
-            Commencer
-          </Link>
-        </article>
-        <article className="rounded-2xl border border-border bg-surface p-5">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 2</p>
-          <h2 className="mt-2 text-lg font-semibold">Comparez les formules</h2>
-          <p className="mt-2 text-sm text-muted">Visualisez les prix, engagements, avantages et différences en un coup d’œil.</p>
-          <Link href="/abonnements?parcours=family#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
-            Voir FAMILY+
-          </Link>
-        </article>
-        <article className="rounded-2xl border border-border bg-surface p-5">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 3</p>
-          <h2 className="mt-2 text-lg font-semibold">Finalisez rapidement</h2>
-          <p className="mt-2 text-sm text-muted">Cliquez sur “Je choisis” puis l’équipe FORM+ vous recontacte pour finaliser.</p>
-          <Link href="/abonnements?parcours=studio-zen#comparateur-abonnements" className="mt-4 inline-flex text-xs uppercase tracking-[0.24em] text-primary hover:text-highlight">
-            Voir Studio +ZEN
-          </Link>
-        </article>
+      <div className="mt-10 rounded-2xl border border-border bg-surface p-5 md:p-6">
+        <div className="grid gap-4 md:grid-cols-3">
+          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
+            1. Choisissez votre objectif: cours, liberte, family ou Studio +ZEN.
+          </p>
+          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
+            2. Comparez prix, engagement et avantages en un coup d oeil.
+          </p>
+          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
+            3. Cliquez sur “Je choisis”, l equipe FORM+ finalise avec vous.
+          </p>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-4 text-xs uppercase tracking-[0.24em] text-muted">
+          <Link href="/abonnements?parcours=cours-collectifs#comparateur-abonnements" className="hover:text-text">Commencer</Link>
+          <Link href="/abonnements?parcours=family#comparateur-abonnements" className="hover:text-text">Voir FAMILY+</Link>
+          <Link href="/abonnements?parcours=studio-zen#comparateur-abonnements" className="hover:text-text">Voir Studio +ZEN</Link>
+        </div>
       </div>
 
       <MediaMosaicSection
