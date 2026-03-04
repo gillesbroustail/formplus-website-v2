@@ -8,6 +8,7 @@ import { PlanningFinalCta } from '@/components/planning/PlanningFinalCta';
 import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 import { TimetableFilters } from '@/components/TimetableFilters';
 import { Button } from '@/components/Button';
+import { MediaMosaicSection } from '@/components/MediaMosaicSection';
 
 export const metadata: Metadata = {
   title: 'Planning FORM+ | Cours fitness premium à Nouméa',
@@ -58,6 +59,19 @@ export default function PlanningPage() {
         </div>
         <TimetableFilters />
       </section>
+
+      <MediaMosaicSection
+        eyebrow="Planning visuel"
+        title="Plus de mouvement, moins de friction."
+        subtitle="Projetez votre semaine en un coup d oeil: studios, coaching, ambiance club et application en continu."
+        items={[
+          { src: '/assets/brand/club-vata.jpg', alt: 'Studio et planning Vata', label: 'Studios Vata' },
+          { src: '/assets/brand/club-almatrium.jpg', alt: 'Coaching Almatrium', label: 'Coaching Almatrium' },
+          { src: '/assets/brand/app.jpg', alt: 'Reservation via application FORM+', label: 'Reserver sur app' }
+        ]}
+        ctaLabel="Voir les abonnements"
+        ctaHref="/abonnements"
+      />
 
       <PlanningHowItWorks />
       <PlanningAppPromo />

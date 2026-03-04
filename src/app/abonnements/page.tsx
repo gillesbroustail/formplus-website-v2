@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SectionHeader } from '@/components/SectionHeader';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { Button } from '@/components/Button';
+import { MediaMosaicSection } from '@/components/MediaMosaicSection';
 
 export const metadata = {
   title: 'Abonnements FORM+ | Salle de sport premium à Nouméa',
@@ -52,6 +53,19 @@ export default function AbonnementsPage() {
           </Link>
         </article>
       </div>
+
+      <MediaMosaicSection
+        eyebrow="Signature FORM+"
+        title="Des abonnements penses pour un mode de vie actif."
+        subtitle="Visualisez l environnement, comparez les parcours et choisissez la formule qui vous accompagne vraiment."
+        items={[
+          { src: '/assets/brand/hero.jpg', alt: 'Training premium FORM+', label: 'Training premium' },
+          { src: '/assets/brand/club-vata.jpg', alt: 'Cours collectifs a Vata', label: 'Cours collectifs' },
+          { src: '/assets/brand/app.jpg', alt: 'Application membre FORM+', label: 'App & QR access' }
+        ]}
+        ctaLabel="Voir le planning"
+        ctaHref="/planning"
+      />
 
       <div className="mt-12">
         <MembershipComparison />

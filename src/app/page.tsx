@@ -5,6 +5,7 @@ import { ClubFinder } from '@/components/ClubFinder';
 import { MembershipComparison } from '@/components/MembershipComparison';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
+import { MediaMosaicSection } from '@/components/MediaMosaicSection';
 import { getContent } from '@/content';
 import { siteConfig } from '@/config/site';
 import { getGoogleRating } from '@/lib/googleRating';
@@ -86,6 +87,21 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="container-wide">
+        <MediaMosaicSection
+          eyebrow="Atmosphere FORM+"
+          title="Une energie visuelle plus immersive."
+          subtitle="L experience FORM+ se vit aussi en images: intensite, mouvement et lieux signatures."
+          ctaLabel="Voir les clubs"
+          ctaHref="/clubs"
+          items={[
+            { src: '/assets/brand/hero.jpg', alt: 'Ambiance entrainement FORM+', label: 'Intensite quotidienne' },
+            { src: '/assets/brand/club-vata.jpg', alt: 'Espace club FORM+ Vata', label: 'Club Vata' },
+            { src: '/assets/brand/club-almatrium.jpg', alt: 'Espace club FORM+ Almatrium', label: 'Club Almatrium' }
+          ]}
+        />
+      </div>
 
       <section className="section-pad bg-surface">
         <div className="container-wide">
