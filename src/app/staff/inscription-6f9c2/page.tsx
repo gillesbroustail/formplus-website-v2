@@ -5,8 +5,8 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Inscription rapide FORM+',
-  description: 'Inscription FORM+ rapide via QR code et formulaire officiel Deciplus.',
+  title: 'Preparation express FORM+',
+  description: 'Preparation express via QR code pour accelerer votre accueil au club.',
   robots: {
     index: false,
     follow: false,
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
 export default function StaffInscriptionPage() {
   const signupUrl = `${siteConfig.memberArea.baseUrl}/signUp`;
   const benefits = [
-    'Vous gagnez du temps des maintenant',
-    'Inscription en ligne en quelques etapes',
-    'Moins de formalites a l accueil',
-    'Visite club et solutions FORM+ presentees plus vite'
+    '30 secondes a 2 minutes',
+    'Accueil plus rapide',
+    'Visite club immediate',
+    'Solutions FORM+ presentees sans attente'
   ];
   const socialProof = [
     '4,8/5 sur Google',
     '2 clubs actifs a Noumea',
-    'Inscription officielle securisee via Deciplus'
+    'Parcours officiel securise via Deciplus'
   ];
   const included = [
     'Votre fiche deja pre-remplie avant votre passage',
@@ -52,12 +52,12 @@ export default function StaffInscriptionPage() {
     {
       question: 'Mes informations sont-elles securisees ?',
       answer:
-        'Oui. Le formulaire est heberge sur Deciplus, la plateforme officielle utilisee pour les inscriptions FORM+.'
+        'Oui. Le formulaire est heberge sur Deciplus, la plateforme officielle utilisee par FORM+.'
     },
     {
       question: 'Que faire si le formulaire ne charge pas ?',
       answer:
-        'Utilisez le lien "Ouvrir l inscription dans un nouvel onglet" sous le module pour continuer sans blocage.'
+        'Utilisez le lien "Ouvrir dans un nouvel onglet" sous le module pour continuer sans blocage.'
     }
   ];
 
@@ -66,12 +66,12 @@ export default function StaffInscriptionPage() {
       <section className="rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <SectionHeader
           eyebrow="Bravo"
-          title="Vous venez de gagner du temps."
-          subtitle="Remplissez ce formulaire maintenant pour accelerer votre passage au club: visite des espaces et presentation de nos solutions le plus rapidement possible."
+          title="Excellent choix."
+          subtitle="Gagnez du temps maintenant pour visiter le club et decouvrir nos solutions le plus vite possible."
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <h2 className="text-sm uppercase tracking-[0.18em] text-muted">Benefices cles</h2>
+            <h2 className="text-sm uppercase tracking-[0.18em] text-muted">Gain de temps</h2>
             <ul className="mt-4 grid gap-3 text-sm text-muted">
               {benefits.map((benefit) => (
                 <li key={benefit} className="rounded-2xl border border-border bg-bg px-4 py-3 text-text">
@@ -96,8 +96,8 @@ export default function StaffInscriptionPage() {
       <section className="mt-10 rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold text-text md:text-4xl">Ce que cela change</h2>
-            <p className="mt-3 text-sm text-muted">Moins d attente, plus d action des votre arrivee au club.</p>
+            <h2 className="text-3xl font-semibold text-text md:text-4xl">Resultat</h2>
+            <p className="mt-3 text-sm text-muted">Moins d attente, plus de visite et de conseil.</p>
             <ul className="mt-6 grid gap-3 text-sm text-muted">
               {included.map((item) => (
                 <li key={item} className="rounded-2xl border border-border bg-bg px-4 py-3 text-text">
@@ -108,7 +108,7 @@ export default function StaffInscriptionPage() {
           </div>
           <div>
             <h2 className="text-3xl font-semibold text-text md:text-4xl">FAQ</h2>
-            <p className="mt-3 text-sm text-muted">Reponses rapides avant de finaliser votre inscription.</p>
+            <p className="mt-3 text-sm text-muted">Reponses rapides.</p>
             <div className="mt-6">
               <FaqAccordion items={faqItems} />
             </div>
@@ -116,7 +116,7 @@ export default function StaffInscriptionPage() {
         </div>
       </section>
 
-      <section className="mt-10" aria-label="Inscription Deciplus">
+      <section className="mt-10" aria-label="Parcours Deciplus">
         <div className="mx-auto max-w-6xl">
           <DeciplusSignupEmbed src={signupUrl} />
         </div>
