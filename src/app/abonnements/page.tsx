@@ -18,15 +18,11 @@ export default function AbonnementsPage() {
           title="Le sur mesure de FORM+"
           subtitle="Comparez rapidement nos formules, puis choisissez votre offre en moins d’une minute."
         />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Cours collectifs + muscu cardio</div>
-          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Avec ou sans engagement</div>
-          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Formules FAMILY+ et Studio +ZEN</div>
-          <div className="rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-muted">Accompagnement par l’équipe FORM+</div>
-        </div>
+        <p className="max-w-2xl text-sm text-muted">
+          Commencez par comparer les offres, puis finalisez en quelques clics avec l’équipe FORM+.
+        </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href="#comparateur-abonnements">Comparer les offres</Button>
-          <Button href="/contact" variant="secondary">Parler à un conseiller</Button>
         </div>
       </section>
 
