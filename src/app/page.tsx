@@ -9,6 +9,7 @@ import { MediaMosaicSection } from '@/components/MediaMosaicSection';
 import { HeroVideoBackdrop } from '@/components/HeroVideoBackdrop';
 import { getContent } from '@/content';
 import { siteConfig } from '@/config/site';
+import { mediaRepository } from '@/config/mediaRepository';
 import { getGoogleRating } from '@/lib/googleRating';
 
 const content = getContent('fr');
@@ -20,9 +21,9 @@ export default async function HomePage() {
     <div>
       <section className="relative min-h-[90vh] overflow-hidden">
         <HeroVideoBackdrop
-          posterSrc="/assets/brand/hero.jpg"
-          videoSrc="/assets/brand/hero-loop.mp4"
-          alt="FORM+ performance"
+          posterSrc={mediaRepository.home.hero.poster.src}
+          videoSrc={mediaRepository.home.hero.video}
+          alt={mediaRepository.home.hero.poster.alt}
           className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/30" />
@@ -69,20 +70,20 @@ export default async function HomePage() {
       <section className="section-pad pt-0">
         <div className="container-wide grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
           <div className="relative min-h-[420px] overflow-hidden rounded-3xl border border-border">
-            <Image src="/assets/brand/club-vata.jpg" alt="Studio FORM+ Vata" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <Image src={mediaRepository.home.clubsMosaic.primary.src} alt={mediaRepository.home.clubsMosaic.primary.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ Vata</p>
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/85">{mediaRepository.home.clubsMosaic.primary.label}</p>
           </div>
           <div className="grid gap-4">
             <div className="relative min-h-[205px] overflow-hidden rounded-3xl border border-border">
-              <Image src="/assets/brand/club-almatrium.jpg" alt="Studio FORM+ Almatrium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <Image src={mediaRepository.home.clubsMosaic.secondaryTop.src} alt={mediaRepository.home.clubsMosaic.secondaryTop.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
-              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">FORM+ Almatrium</p>
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">{mediaRepository.home.clubsMosaic.secondaryTop.label}</p>
             </div>
             <div className="relative min-h-[205px] overflow-hidden rounded-3xl border border-border">
-              <Image src="/assets/brand/app.jpg" alt="Application FORM+" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <Image src={mediaRepository.home.clubsMosaic.secondaryBottom.src} alt={mediaRepository.home.clubsMosaic.secondaryBottom.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
-              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">App & booking</p>
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/85">{mediaRepository.home.clubsMosaic.secondaryBottom.label}</p>
             </div>
           </div>
         </div>
@@ -96,9 +97,9 @@ export default async function HomePage() {
           ctaLabel="Voir les clubs"
           ctaHref="/clubs"
           items={[
-            { src: '/assets/brand/hero.jpg', alt: 'Ambiance entrainement FORM+', label: 'Intensite quotidienne' },
-            { src: '/assets/brand/club-vata.jpg', alt: 'Espace club FORM+ Vata', label: 'Club Vata' },
-            { src: '/assets/brand/club-almatrium.jpg', alt: 'Espace club FORM+ Almatrium', label: 'Club Almatrium' }
+            mediaRepository.home.atmosphereMosaic.primary,
+            mediaRepository.home.atmosphereMosaic.secondaryTop,
+            mediaRepository.home.atmosphereMosaic.secondaryBottom
           ]}
         />
       </div>
@@ -106,9 +107,9 @@ export default async function HomePage() {
       <section className="section-pad pt-2">
         <div className="relative overflow-hidden rounded-[2rem] border border-border">
           <HeroVideoBackdrop
-            posterSrc="/assets/brand/club-vata.jpg"
-            videoSrc="/assets/brand/club-loop.mp4"
-            alt="Atmosphere club FORM+"
+            posterSrc={mediaRepository.home.experienceBreak.poster.src}
+            videoSrc={mediaRepository.home.experienceBreak.video}
+            alt={mediaRepository.home.experienceBreak.poster.alt}
             className="absolute inset-0"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/35 to-transparent" />
@@ -169,7 +170,7 @@ export default async function HomePage() {
             <Button href="/contact" className="mt-8">Découvrir l’app</Button>
           </div>
           <div className="relative min-h-[360px]">
-            <Image src="/assets/brand/app.jpg" alt="Application FORM+" fill className="object-contain" />
+            <Image src={mediaRepository.home.appVisual.src} alt={mediaRepository.home.appVisual.alt} fill className="object-contain" />
           </div>
         </div>
       </section>

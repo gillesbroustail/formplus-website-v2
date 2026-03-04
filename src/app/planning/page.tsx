@@ -9,6 +9,7 @@ import { ZenEcosystemSection } from '@/components/ZenEcosystemSection';
 import { TimetableFilters } from '@/components/TimetableFilters';
 import { Button } from '@/components/Button';
 import { MediaMosaicSection } from '@/components/MediaMosaicSection';
+import { mediaRepository } from '@/config/mediaRepository';
 
 export const metadata: Metadata = {
   title: 'Planning FORM+ | Cours fitness premium à Nouméa',
@@ -25,20 +26,20 @@ export default function PlanningPage() {
       <section className="section-pad pt-0">
         <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
           <div className="relative min-h-[390px] overflow-hidden rounded-3xl border border-border">
-            <Image src="/assets/brand/hero.jpg" alt="Rythme d'entrainement FORM+" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+            <Image src={mediaRepository.planning.topMosaic.primary.src} alt={mediaRepository.planning.topMosaic.primary.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/90">Rythme premium</p>
+            <p className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.3em] text-text/90">{mediaRepository.planning.topMosaic.primary.label}</p>
           </div>
           <div className="grid gap-4">
             <div className="relative min-h-[187px] overflow-hidden rounded-3xl border border-border">
-              <Image src="/assets/brand/club-vata.jpg" alt="Cours collectifs Vata" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <Image src={mediaRepository.planning.topMosaic.secondaryTop.src} alt={mediaRepository.planning.topMosaic.secondaryTop.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
-              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">Studio + cours</p>
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">{mediaRepository.planning.topMosaic.secondaryTop.label}</p>
             </div>
             <div className="relative min-h-[187px] overflow-hidden rounded-3xl border border-border">
-              <Image src="/assets/brand/club-almatrium.jpg" alt="Coaching Almatrium" fill className="object-cover transition duration-700 hover:scale-[1.03]" />
+              <Image src={mediaRepository.planning.topMosaic.secondaryBottom.src} alt={mediaRepository.planning.topMosaic.secondaryBottom.alt} fill className="object-cover transition duration-700 hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/85 to-transparent" />
-              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">Coaching expert</p>
+              <p className="absolute bottom-5 left-5 text-xs uppercase tracking-[0.3em] text-text/90">{mediaRepository.planning.topMosaic.secondaryBottom.label}</p>
             </div>
           </div>
         </div>
@@ -65,9 +66,9 @@ export default function PlanningPage() {
         title="Plus de mouvement, moins de friction."
         subtitle="Projetez votre semaine en un coup d oeil: studios, coaching, ambiance club et application en continu."
         items={[
-          { src: '/assets/brand/club-vata.jpg', alt: 'Studio et planning Vata', label: 'Studios Vata' },
-          { src: '/assets/brand/club-almatrium.jpg', alt: 'Coaching Almatrium', label: 'Coaching Almatrium' },
-          { src: '/assets/brand/app.jpg', alt: 'Reservation via application FORM+', label: 'Reserver sur app' }
+          mediaRepository.planning.visualMosaic.primary,
+          mediaRepository.planning.visualMosaic.secondaryTop,
+          mediaRepository.planning.visualMosaic.secondaryBottom
         ]}
         ctaLabel="Voir les abonnements"
         ctaHref="/abonnements"

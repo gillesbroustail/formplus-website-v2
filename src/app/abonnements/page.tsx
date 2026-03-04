@@ -4,6 +4,7 @@ import { MembershipComparison } from '@/components/MembershipComparison';
 import { Button } from '@/components/Button';
 import { MediaMosaicSection } from '@/components/MediaMosaicSection';
 import { HeroVideoBackdrop } from '@/components/HeroVideoBackdrop';
+import { mediaRepository } from '@/config/mediaRepository';
 
 export const metadata = {
   title: 'Abonnements FORM+ | Salle de sport premium à Nouméa',
@@ -16,9 +17,9 @@ export default function AbonnementsPage() {
     <div className="container-wide section-pad">
       <section className="relative overflow-hidden rounded-[2rem] border border-border p-8 md:p-12">
         <HeroVideoBackdrop
-          posterSrc="/assets/brand/hero.jpg"
-          videoSrc="/assets/brand/abonnements-loop.mp4"
-          alt="Abonnements FORM+"
+          posterSrc={mediaRepository.abonnements.hero.poster.src}
+          videoSrc={mediaRepository.abonnements.hero.video}
+          alt={mediaRepository.abonnements.hero.poster.alt}
           className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/75 to-bg/40" />
@@ -59,9 +60,9 @@ export default function AbonnementsPage() {
         title="Des abonnements penses pour un mode de vie actif."
         subtitle="Visualisez l environnement, comparez les parcours et choisissez la formule qui vous accompagne vraiment."
         items={[
-          { src: '/assets/brand/hero.jpg', alt: 'Training premium FORM+', label: 'Training premium' },
-          { src: '/assets/brand/club-vata.jpg', alt: 'Cours collectifs a Vata', label: 'Cours collectifs' },
-          { src: '/assets/brand/app.jpg', alt: 'Application membre FORM+', label: 'App & QR access' }
+          mediaRepository.abonnements.signatureMosaic.primary,
+          mediaRepository.abonnements.signatureMosaic.secondaryTop,
+          mediaRepository.abonnements.signatureMosaic.secondaryBottom
         ]}
         ctaLabel="Voir le planning"
         ctaHref="/planning"
