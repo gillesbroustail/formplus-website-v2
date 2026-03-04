@@ -45,8 +45,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '14 885 F',
     cadence: 'Paiement unique',
     commitment: 'Validité 3 mois',
-    description: '10 séances, accès aux 3 clubs.',
-    highlights: ['10 séances', 'Accès aux 3 clubs', 'Accès aux cours'],
+    description: '10 séances, accès aux 2 clubs.',
+    highlights: ['10 séances', 'Accès aux 2 clubs', 'Accès aux cours'],
     category: 'sur-mesure'
   },
   {
@@ -55,8 +55,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '29 770 F',
     cadence: 'Paiement unique',
     commitment: 'Validité 6 mois',
-    description: '25 séances, accès aux 3 clubs.',
-    highlights: ['25 séances', 'Accès aux 3 clubs', 'Accès aux cours'],
+    description: '25 séances, accès aux 2 clubs.',
+    highlights: ['25 séances', 'Accès aux 2 clubs', 'Accès aux cours'],
     category: 'sur-mesure'
   },
   {
@@ -65,8 +65,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '14 990 F / 4 semaines',
     cadence: 'Mensuel',
     commitment: '1 prélèvement min.',
-    description: 'Séances illimitées, accès aux 3 clubs.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours'],
+    description: 'Séances illimitées, accès aux 2 clubs.',
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours'],
     tag: 'Sans engagement',
     category: 'sans-engagement'
   },
@@ -76,8 +76,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '6 490 F / 4 semaines',
     cadence: 'Mensuel',
     commitment: '3 prélèvements min.',
-    description: 'Séances illimitées, accès aux 3 clubs.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours non inclus'],
+    description: 'Séances illimitées, accès aux 2 clubs.',
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours non inclus'],
     tag: 'Populaire',
     category: 'muscu-cardio'
   },
@@ -87,8 +87,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '6 490 F / 4 semaines',
     cadence: 'Mensuel',
     commitment: '3 prélèvements min.',
-    description: 'Séances illimitées, accès aux 3 clubs.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours non inclus'],
+    description: 'Séances illimitées, accès aux 2 clubs.',
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours non inclus'],
     category: 'sans-engagement'
   },
   {
@@ -97,8 +97,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '5 490 F / 4 semaines',
     cadence: 'Mensuel',
     commitment: '12 prélèvements min.',
-    description: 'Séances illimitées, accès aux 3 clubs.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours non inclus'],
+    description: 'Séances illimitées, accès aux 2 clubs.',
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours non inclus'],
     category: 'muscu-cardio'
   },
   {
@@ -107,8 +107,8 @@ export const membershipPlans: MembershipPlan[] = [
     price: '9 990 F / 4 semaines',
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
-    description: 'Séances illimitées, accès aux 3 clubs + cours collectifs.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    description: 'Séances illimitées, accès aux 2 clubs + cours collectifs.',
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'cours-collectifs'
   },
   {
@@ -118,7 +118,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
     description: 'Séances illimitées et cours collectifs sur créneaux matinaux.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'cours-collectifs'
   },
   {
@@ -128,7 +128,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 1 seul prélèvement.',
     description: 'Séances illimitées et cours collectifs, liberté totale.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'cours-collectifs'
   },
   {
@@ -138,7 +138,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
     description: 'Jusqu’à 3 co‑utilisateurs, accès illimité.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'family'
   },
   {
@@ -148,7 +148,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
     description: 'Jusqu’à 4 co‑utilisateurs, accès illimité.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'family'
   },
   {
@@ -158,7 +158,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
     description: 'Jusqu’à 5 co‑utilisateurs, accès illimité.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'family'
   },
   {
@@ -168,7 +168,7 @@ export const membershipPlans: MembershipPlan[] = [
     cadence: 'Mensuel',
     commitment: 'Résiliable mensuellement après 12 prélèvements.',
     description: 'Jusqu’à 6 co‑utilisateurs, accès illimité.',
-    highlights: ['Séances illimitées', 'Accès aux 3 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
+    highlights: ['Séances illimitées', 'Accès aux 2 clubs', 'Accès aux cours', 'Suspension possible à 945 F / 4 semaines'],
     category: 'family'
   }
 ];
