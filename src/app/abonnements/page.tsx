@@ -36,23 +36,22 @@ export default function AbonnementsPage() {
         </div>
       </section>
 
-      <div className="mt-10 rounded-2xl border border-border bg-surface p-5 md:p-6">
-        <div className="grid gap-4 md:grid-cols-3">
-          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
-            1. Choisissez votre objectif: cours, liberte, family ou Studio +ZEN.
-          </p>
-          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
-            2. Comparez prix, engagement et avantages en un coup d oeil.
-          </p>
-          <p className="rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text">
-            3. Cliquez sur “Je choisis”, l equipe FORM+ finalise avec vous.
-          </p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-4 text-xs uppercase tracking-[0.24em] text-muted">
-          <Link href="/abonnements?parcours=cours-collectifs#comparateur-abonnements" className="hover:text-text">Commencer</Link>
-          <Link href="/abonnements?parcours=family#comparateur-abonnements" className="hover:text-text">Voir FAMILY+</Link>
-          <Link href="/abonnements?parcours=studio-zen#comparateur-abonnements" className="hover:text-text">Voir Studio +ZEN</Link>
-        </div>
+      <div className="mt-10 grid gap-3 md:grid-cols-3">
+        <p className="rounded-2xl border border-border bg-surface px-5 py-4 text-sm text-text">
+          Choisissez votre objectif: cours, liberte, family ou Studio +ZEN.
+        </p>
+        <p className="rounded-2xl border border-border bg-surface px-5 py-4 text-sm text-text">
+          Comparez prix, engagement et avantages en un coup d oeil.
+        </p>
+        <p className="rounded-2xl border border-border bg-surface px-5 py-4 text-sm text-text">
+          Cliquez sur “Je choisis”, l equipe FORM+ finalise avec vous.
+        </p>
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-4 text-xs uppercase tracking-[0.24em] text-muted">
+        <Link href="/abonnements?parcours=cours-collectifs#comparateur-abonnements" className="hover:text-text">Commencer</Link>
+        <Link href="/abonnements?parcours=family#comparateur-abonnements" className="hover:text-text">Voir FAMILY+</Link>
+        <Link href="/abonnements?parcours=studio-zen#comparateur-abonnements" className="hover:text-text">Voir Studio +ZEN</Link>
       </div>
 
       <MediaMosaicSection

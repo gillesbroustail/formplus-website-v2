@@ -12,7 +12,7 @@ export function PlanningValueProps() {
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-muted">Planning cours collectifs</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tightest md:text-4xl">
+          <h2 className="mt-3 font-display text-4xl font-semibold tracking-tightest md:text-5xl">
             Redefinir votre routine.
           </h2>
           <p className="mt-4 max-w-md text-sm text-muted md:text-base">
@@ -21,7 +21,7 @@ export function PlanningValueProps() {
         </div>
         <ul className="grid gap-3">
           {benefits.map((item) => (
-            <li key={item} className="rounded-2xl border border-border bg-surface px-5 py-4 text-sm text-text md:text-base">
+            <li key={item} className="rounded-2xl border border-border bg-[#0a0a0a] px-5 py-4 text-sm text-text md:text-base">
               {item}
             </li>
           ))}

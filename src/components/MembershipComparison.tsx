@@ -32,17 +32,13 @@ export function MembershipComparison() {
 
   return (
     <section id="comparateur-abonnements" aria-label="Comparateur des abonnements FORM+">
-      <div className="mb-5 rounded-2xl border border-border bg-surface p-4">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted">Etape 2</p>
-        <p className="mt-2 text-sm text-muted">Choisissez une catégorie, comparez les offres, puis cliquez sur “Je choisis” pour finaliser avec l’équipe FORM+.</p>
-      </div>
       <div className="flex flex-wrap gap-3">
         {allSections.map((section) => (
           <button
             key={section.id}
             onClick={() => setActive(section.id)}
             className={cn(
-              'rounded-full border px-5 py-2 text-xs uppercase tracking-[0.3em] transition',
+              'rounded-full border px-5 py-2.5 text-xs uppercase tracking-[0.28em] transition',
               active === section.id
                 ? 'border-primary bg-primary text-bg'
                 : 'border-border text-muted hover:text-text'
@@ -53,14 +49,14 @@ export function MembershipComparison() {
         ))}
       </div>
 
-      <div className="mt-6 rounded-3xl border border-border bg-surface p-5">
+      <div className="mt-5">
         <p className="text-xs uppercase tracking-[0.3em] text-muted">{activeSection?.title}</p>
-        <p className="mt-2 text-sm text-muted">{activeSection?.subtitle}</p>
+        <p className="mt-1 text-sm text-muted">{activeSection?.subtitle}</p>
       </div>
 
       {isZenActive ? (
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-border bg-surface p-6 transition hover:border-primary/60 hover:shadow-lift">
+          <div className="rounded-3xl border border-border bg-[#0a0a0a] p-6 transition hover:border-primary/60 hover:shadow-lift">
             <h3 className="text-xl font-semibold">+ZEN ILLIMITE</h3>
             <p className="mt-3 text-sm text-muted">
               Accès illimité aux expériences Studio +ZEN: Reformer Pilates, Fly Yoga, Yoga et Pilates.
@@ -79,7 +75,7 @@ export function MembershipComparison() {
               </Link>
             </div>
           </div>
-          <div className="rounded-3xl border border-border bg-surface p-6 transition hover:border-primary/60 hover:shadow-lift">
+          <div className="rounded-3xl border border-border bg-[#0a0a0a] p-6 transition hover:border-primary/60 hover:shadow-lift">
             <h3 className="text-xl font-semibold">+ZEN A LA SEANCE</h3>
             <p className="mt-3 text-sm text-muted">
               Flexibilité maximale pour réserver à la séance selon votre rythme, sans changer vos habitudes.
@@ -112,7 +108,7 @@ export function MembershipComparison() {
           {plans.map((plan) => (
             <article
               key={plan.id}
-              className="rounded-3xl border border-border bg-surface p-6 transition hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-lift"
+            className="rounded-3xl border border-border bg-[#0a0a0a] p-6 transition hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-lift"
             >
               {plan.tag ? (
                 <span className="inline-flex rounded-full bg-primary px-3 py-1 text-xs uppercase tracking-[0.3em] text-bg">
