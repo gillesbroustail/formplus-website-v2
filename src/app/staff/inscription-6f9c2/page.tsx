@@ -22,11 +22,10 @@ export const metadata: Metadata = {
 export default function StaffInscriptionPage() {
   const signupUrl = `${siteConfig.memberArea.baseUrl}/signUp`;
   const benefits = [
-    'Excellent choix: vous prenez une longueur d avance',
-    'Inscription rapide en quelques etapes',
-    'Acces multi-clubs FORM+',
-    'Cours collectifs + musculation/cardio',
-    'Acces QR et reservation via app'
+    'Vous gagnez du temps des maintenant',
+    'Inscription en ligne en quelques etapes',
+    'Moins de formalites a l accueil',
+    'Visite club et solutions FORM+ presentees plus vite'
   ];
   const socialProof = [
     '4,8/5 sur Google',
@@ -34,26 +33,26 @@ export default function StaffInscriptionPage() {
     'Inscription officielle securisee via Deciplus'
   ];
   const included = [
-    'Creation de votre profil membre',
-    'Validation de vos informations en ligne',
-    'Demarrage rapide de votre parcours FORM+',
-    'Relais simple avec l equipe a l accueil'
+    'Votre fiche deja pre-remplie avant votre passage',
+    'Un accueil plus fluide au club',
+    'Plus de temps pour visiter les espaces',
+    'Presentation rapide des solutions adaptees a votre objectif'
   ];
   const faqItems = [
     {
       question: 'Pourquoi scanner ce QR code ?',
       answer:
-        'Parce que vous faites le bon choix. Vous gagnez du temps a l accueil en commencant votre inscription ici.'
+        'Pour gagner du temps a l accueil et passer plus vite a l essentiel: visiter le club et decouvrir nos solutions.'
     },
     {
       question: 'Combien de temps cela prend ?',
       answer:
-        'En general, 30 secondes a 2 minutes selon les informations a renseigner.'
+        'En general, entre 30 secondes et 2 minutes selon les informations a renseigner.'
     },
     {
       question: 'Mes informations sont-elles securisees ?',
       answer:
-        'Oui. Le formulaire est heberge par Deciplus, la plateforme officielle d inscription de FORM+.'
+        'Oui. Le formulaire est heberge sur Deciplus, la plateforme officielle utilisee pour les inscriptions FORM+.'
     },
     {
       question: 'Que faire si le formulaire ne charge pas ?',
@@ -67,8 +66,8 @@ export default function StaffInscriptionPage() {
       <section className="rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <SectionHeader
           eyebrow="Bravo"
-          title="Excellent choix, vous venez de gagner du temps."
-          subtitle="Vous avez scanne le bon QR code. Completez maintenant votre inscription FORM+ pour un accueil plus rapide au club."
+          title="Vous venez de gagner du temps."
+          subtitle="Remplissez ce formulaire maintenant pour accelerer votre passage au club: visite des espaces et presentation de nos solutions le plus rapidement possible."
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
@@ -97,8 +96,8 @@ export default function StaffInscriptionPage() {
       <section className="mt-10 rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold text-text md:text-4xl">Ce que vous obtenez</h2>
-            <p className="mt-3 text-sm text-muted">Tout ce qu il faut pour demarrer votre experience FORM+ sans attendre.</p>
+            <h2 className="text-3xl font-semibold text-text md:text-4xl">Ce que cela change</h2>
+            <p className="mt-3 text-sm text-muted">Moins d attente, plus d action des votre arrivee au club.</p>
             <ul className="mt-6 grid gap-3 text-sm text-muted">
               {included.map((item) => (
                 <li key={item} className="rounded-2xl border border-border bg-bg px-4 py-3 text-text">
