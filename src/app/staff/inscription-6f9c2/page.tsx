@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 export default function StaffInscriptionPage() {
   const signupUrl = `${siteConfig.memberArea.baseUrl}/signUp`;
   const benefits = [
+    'Excellent choix: vous prenez une longueur d avance',
     'Inscription rapide en quelques etapes',
     'Acces multi-clubs FORM+',
     'Cours collectifs + musculation/cardio',
@@ -42,12 +43,12 @@ export default function StaffInscriptionPage() {
     {
       question: 'Pourquoi scanner ce QR code ?',
       answer:
-        'Pour gagner du temps a l accueil. Vous commencez votre inscription ici avant de finaliser avec l equipe FORM+.'
+        'Parce que vous faites le bon choix. Vous gagnez du temps a l accueil en commencant votre inscription ici.'
     },
     {
       question: 'Combien de temps cela prend ?',
       answer:
-        'La saisie initiale prend environ 30 secondes a 2 minutes selon les informations a renseigner.'
+        'En general, 30 secondes a 2 minutes selon les informations a renseigner.'
     },
     {
       question: 'Mes informations sont-elles securisees ?',
@@ -65,9 +66,9 @@ export default function StaffInscriptionPage() {
     <div className="container-wide section-pad">
       <section className="rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <SectionHeader
-          eyebrow="Inscription Express"
-          title="Gagnez du temps en scannant ici"
-          subtitle="Bienvenue chez FORM+. Completez votre inscription en ligne maintenant pour accelerer votre accueil au club."
+          eyebrow="Bravo"
+          title="Excellent choix, vous venez de gagner du temps."
+          subtitle="Vous avez scanne le bon QR code. Completez maintenant votre inscription FORM+ pour un accueil plus rapide au club."
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
@@ -96,8 +97,8 @@ export default function StaffInscriptionPage() {
       <section className="mt-10 rounded-[2rem] border border-border bg-surface/60 p-8 md:p-12">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold text-text md:text-4xl">What you get</h2>
-            <p className="mt-3 text-sm text-muted">Tout ce qu il faut pour demarrer votre experience FORM+ sans attente.</p>
+            <h2 className="text-3xl font-semibold text-text md:text-4xl">Ce que vous obtenez</h2>
+            <p className="mt-3 text-sm text-muted">Tout ce qu il faut pour demarrer votre experience FORM+ sans attendre.</p>
             <ul className="mt-6 grid gap-3 text-sm text-muted">
               {included.map((item) => (
                 <li key={item} className="rounded-2xl border border-border bg-bg px-4 py-3 text-text">
